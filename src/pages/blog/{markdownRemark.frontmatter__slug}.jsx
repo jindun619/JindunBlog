@@ -9,15 +9,7 @@ export default function BlogPostTemplate({
   const { frontmatter, html } = markdownRemark
   console.log(frontmatter);
   return (
-    // <div data-theme="light" className="whole_container">
-    //   <Navbar />
-    //   <div className="max-w-2xl mx-auto">
-    //     <TagsArea />
-    //     <CardsArea />
-    //   </div>
-    // </div>
-    // <div data-theme="light" className="whole_container">
-    <div>
+    <div data-theme="winter" className="whole_container"> {/* night */}
       <Navbar />
       <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0">
         <article className="prose">

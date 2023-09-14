@@ -7,10 +7,10 @@ import { CardsArea } from "../components/CardsArea";
 
 function IndexPage( {data} ) {
   return (
-    <div data-theme="light" className="whole_container">
+    <div data-theme="winter" className="whole_container"> {/* night */}
       <Navbar />
       <div className="max-w-2xl mx-auto">
-        <TagsArea />
+        <TagsArea data={data} />
         <CardsArea data={data} />
       </div>
     </div>
@@ -21,17 +21,19 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query MyQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           frontmatter {
             date
             title
             slug
+            tags
           }
           excerpt
         }
       }
+      distinct(field: {frontmatter: {tags: SELECT}})
     }
   }
 `

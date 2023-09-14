@@ -11,22 +11,16 @@ function TagH1() {
   );
 }
 
-function TagsArea() {
+function TagsArea(props) {
+  const data = props.data;
+  const tags = data.allMarkdownRemark.distinct.map((it, idx) => (
+    <Tag key={idx} name={it} />
+  ))
   return (
     <div>
       <TagH1 />
       <div className="flex flex-wrap gap-2 m-5">
-        <Tag name="a" />
-        <Tag name="ab" />
-        <Tag name="abc" />
-        <Tag name="abcd" />
-        <Tag name="abc" />
-        <Tag name="abcde" />
-        <Tag name="a" />
-        <Tag name="abc" />
-        <Tag name="abcd efghi" />
-        <Tag name="a" />
-        <Tag name="abcd" />
+        {tags}
       </div>
     </div>
   );
