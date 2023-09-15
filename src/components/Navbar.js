@@ -2,11 +2,11 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { Tag } from "./Tag";
 
-function Navbar(props) {
-  const data = props.data;
-  const tags = data.allMarkdownRemark.distinct.map((it, idx) => (
-    <li>
-      <a className="no-underline">{it}</a>
+function Navbar({data}) {
+  const {allMarkdownRemark} = data
+  const tags = allMarkdownRemark.distinct.map((it, idx) => (
+    <li key={idx}>
+      <Tag key={idx} name={it} />
     </li>
   ))
 
@@ -37,6 +37,11 @@ function Navbar(props) {
           <div className="drawer-side">
             <label htmlFor="my-drawer" className="drawer-overlay"></label>
             <ul className="menu p-4 ml-0 w-80 min-h-full bg-base-200">
+              <article className="prose m-5">
+                <h1>
+                  Tags<div className="badge badge-ghost">{allMarkdownRemark.totalCount}</div>
+                </h1>
+              </article>
               {/* <li><a className="no-underline">Sidebar Item 1</a></li>
               <li><a>Sidebar Item 2</a></li> */}
               {tags}

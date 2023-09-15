@@ -2,7 +2,7 @@ import * as React from "react";
 
 function Tag(props) {
   return (
-    <button className="btn btn-outline btn-xs">{props.name}</button>
+    <button className="btn btn-outline btn-sm">{props.name}</button>
   );
 }
 

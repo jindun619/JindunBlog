@@ -33,6 +33,7 @@ query MyQuery {
   }
   allMarkdownRemark {
     distinct(field: {frontmatter: {tags: SELECT}})
+    totalCount
   }
 }
 `
