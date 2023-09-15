@@ -7,8 +7,8 @@ import { CardsArea } from "../components/CardsArea";
 
 function IndexPage( {data} ) {
   return (
-    <div data-theme="winter" className="whole_container"> {/* night */}
-      <Navbar />
+    <div data-theme="winter" className="whole_container h-full"> {/* night */}
+      <Navbar data={data} />
       <div className="max-w-2xl mx-auto">
         <TagsArea data={data} />
         <CardsArea data={data} />
@@ -34,6 +34,7 @@ export const pageQuery = graphql`
         }
       }
       distinct(field: {frontmatter: {tags: SELECT}})
+      totalCount
     }
   }
 `
