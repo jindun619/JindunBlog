@@ -10,6 +10,18 @@ function Navbar({data}) {
     </li>
   ))
 
+  const toggleTheme = () => {
+    console.log("clicked")
+    const curTheme = window.localStorage.getItem('theme')
+    const newTheme = curTheme == 'dark' ? 'light' : 'dark'
+    const newThemeName = newTheme == 'light' ? 'winter' : 'night'
+    const whole_container = document.querySelector(".whole_container");
+    console.log(newTheme)
+    console.log(newThemeName)
+    whole_container.setAttribute('data-theme', newThemeName)
+    window.localStorage.setItem('theme', newTheme)
+  };
+
   return (
     <div className="navbar bg-primary sticky top-0 z-10">
       <div className="navbar-start">
@@ -102,15 +114,5 @@ function Navbar({data}) {
     </div>
   );
 }
-
-const toggleTheme = () => {
-  const target = document.querySelector(".whole_container");
-  const curTheme = target.getAttribute("data-theme");
-  if (curTheme == "winter") {
-    target.setAttribute("data-theme", "night");
-  } else {
-    target.setAttribute("data-theme", "winter");
-  }
-};
 
 export { Navbar };
