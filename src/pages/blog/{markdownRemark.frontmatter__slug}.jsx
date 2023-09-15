@@ -2,15 +2,12 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { Navbar } from "../../components/Navbar";
 
-export default function BlogPostTemplate({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
-  console.log(frontmatter);
+export default function BlogPostTemplate({data}) {
+  const {markdownRemark} = data
+  const {frontmatter, html} = markdownRemark
   return (
     <div data-theme="winter" className="whole_container h-screen"> {/* night */}
-      <Navbar />
+      <Navbar data={data} />
       <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0">
         <article className="prose">
           <h1>{frontmatter.title}</h1>
@@ -25,14 +22,17 @@ export default function BlogPostTemplate({
 }
 
 export const pageQuery = graphql`
-  query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        slug
-        title
-      }
+query MyQuery {
+  markdownRemark {
+    frontmatter {
+      date
+      tags
+      title
     }
+    html
   }
+  allMarkdownRemark {
+    distinct(field: {frontmatter: {tags: SELECT}})
+  }
+}
 `
