@@ -1,8 +1,9 @@
 import * as React from "react";
+import { Link } from "gatsby"
 
-function Tag(props) {
+function Tag({ name, size }) {
   return (
-    <button className="btn btn-outline btn-sm">{props.name}</button>
+    <button className={`btn btn-outline btn-${size}`}>{name}</button>
   );
 }
 

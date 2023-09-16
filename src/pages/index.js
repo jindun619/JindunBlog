@@ -19,7 +19,7 @@ function IndexPage( {data} ) {
     <div data-theme="winter" className="whole_container h-full"> {/* night */}
       <Navbar data={data} />
       <div className="max-w-2xl pt-16 mx-auto">
-        <CardsArea data={data} />
+        <CardsArea data={data.allMarkdownRemark.edges} />
       </div>
     </div>
   );

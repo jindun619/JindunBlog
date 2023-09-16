@@ -5,9 +5,11 @@ import { Tag } from "./Tag";
 function Navbar({data}) {
   const {allMarkdownRemark} = data
   const tags = allMarkdownRemark.distinct.map((it, idx) => (
-    <li key={idx}>
-      <Tag key={idx} name={it} />
-    </li>
+    <Link key={idx} to={`/tags/${it}`}>
+      <li className="my-2">
+        <Tag name={it} size="sm" />
+      </li>
+    </Link>
   ))
 
   const toggleTheme = () => {
