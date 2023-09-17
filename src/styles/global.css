@@ -9,3 +9,52 @@
         font-family: 'Spoqa Han Sans Neo', system-ui, 'sans-serif';
     }
 }
+
+.listByTag .prose {
+    @apply pl-8
+}
+
+.prose header {
+    @apply border-b-4 mb-10
+}
+
+.prose header p {
+    @apply my-2
+}
+
+.prose header div {
+    @apply flex flex-wrap gap-2 mb-2
+}
+
+.prose header h1 {
+    @apply mb-4 border-none
+}
+
+.mdSyntax h1 {
+    @apply text-5xl border-b
+}
+
+.mdSyntax h2 {
+    @apply text-4xl border-b
+}
+
+.mdSyntax h3 {
+    @apply text-3xl border-b
+}
+
+.mdSyntax h4 {
+    @apply text-2xl border-b
+}
+
+.mdSyntax h5 {
+    @apply text-xl border-b
+}
+
+.mdSyntax h6 {
+    @apply text-lg border-b
+}
+
+.mdSyntax blockquote {
+    @apply border-l-primary;
+    quotes: none;
+}

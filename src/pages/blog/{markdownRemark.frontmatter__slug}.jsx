@@ -2,6 +2,7 @@ import * as React from "react"
 import { useEffect } from "react"
 import { graphql } from "gatsby"
 import { Navbar } from "../../components/Navbar";
+import { Tag } from "../../components/Tag"
 
 export default function BlogPostTemplate({data}) {
   useEffect(() => {
@@ -9,21 +10,29 @@ export default function BlogPostTemplate({data}) {
     window.localStorage.setItem('theme', curTheme)
 
     const whole_container = document.querySelector("html")
-    const newTheme = curTheme=='light' ? 'winter' : 'night'
+    const newTheme = curTheme === 'light' ? 'winter' : 'night'
     whole_container.setAttribute('data-theme', newTheme)
   })
 
   const {markdownRemark} = data
   const {frontmatter, html} = markdownRemark
+
+  const tags = frontmatter.tags.map((node) => (
+    <Tag key={node} name={node} size="xs" />
+  ))
   return (
     <div className="whole_container h-full"> {/* night */}
       <Navbar data={data} />
       <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0">
         <article className="prose">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
+          <header>
+            <h1>{frontmatter.title}</h1>
+            <p>{frontmatter.date}</p>
+            <div>{tags}</div>
+          </header>
           <div
             dangerouslySetInnerHTML={{ __html: html }}
+            className="mdSyntax"
           />
         </article>
       </div>

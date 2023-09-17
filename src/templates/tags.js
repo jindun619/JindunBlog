@@ -23,13 +23,11 @@ export default function tagsPageTemplate({ pageContext, data }) {
     return (
       <div className="whole_container h-full"> {/* night */}
         <Navbar data={data} />
-        <div className="max-w-2xl pt-16 mx-auto">
-          <div className="p-8">
-            <article className="prose">
-              <h1>{`# ${tag}`}</h1>
-              <figcaption>{`총 ${filteredData.length}개의 포스트`}</figcaption>
-            </article>
-          </div>
+        <div className="listByTag max-w-2xl pt-16 mx-auto">
+          <article className="prose">
+            <h1>{`# ${tag}`}</h1>
+            <figcaption>{`총 ${filteredData.length}개의 포스트`}</figcaption>
+          </article>
           <CardsArea data={filteredData} />
         </div>
       </div>

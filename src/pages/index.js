@@ -18,7 +18,10 @@ function IndexPage( {data} ) {
   return (
     <div className="whole_container h-full"> {/* night */}
       <Navbar data={data} />
-      <div className="max-w-2xl pt-16 mx-auto">
+      <div className="max-w-2xl mx-auto">
+        <article className="prose">
+          <figcaption className="pl-8 mt-4">{`총 ${data.allMarkdownRemark.edges.length}개의 포스트`}</figcaption>
+        </article>
         <CardsArea data={data.allMarkdownRemark.edges} />
       </div>
     </div>

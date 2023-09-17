@@ -6,7 +6,7 @@ function Card(props) {
   const tags = props.tags.map((tagName) => (<Tag key={tagName} name={tagName} size="xs" />))
 
   return (
-    <div className="card-bordered card-normal font-sans cursor-pointer hover:bg-primary-content">
+    <div className="card-normal font-sans cursor-pointer hover:bg-primary-content">
       <Link to={`/blog${props.link}`} className="no-underline">
         <div className="card-body">
           <h2 className="card-titles text-3xl font-bold text-primary">{props.title}</h2>
