@@ -10,6 +10,10 @@
     }
 }
 
+.navbar {
+    transition: top 0.4s ease-in-out;
+}
+
 .listByTag .prose {
     @apply pl-8
 }
@@ -27,31 +31,35 @@
 }
 
 .prose header h1 {
-    @apply mb-4 border-none
+    @apply text-5xl mb-4 border-none
 }
 
 .mdSyntax h1 {
-    @apply text-5xl border-b
-}
-
-.mdSyntax h2 {
     @apply text-4xl border-b
 }
 
-.mdSyntax h3 {
+.mdSyntax h2 {
     @apply text-3xl border-b
 }
 
-.mdSyntax h4 {
+.mdSyntax h3 {
     @apply text-2xl border-b
 }
 
-.mdSyntax h5 {
+.mdSyntax h4 {
     @apply text-xl border-b
 }
 
-.mdSyntax h6 {
+.mdSyntax h5 {
     @apply text-lg border-b
+}
+
+.mdSyntax h6 {
+    @apply text-base border-b
+}
+
+.mdSyntax p {
+    @apply text-lg
 }
 
 .mdSyntax blockquote {
