@@ -17,9 +17,7 @@ function Navbar({data}) {
     const curTheme = window.localStorage.getItem('theme')
     const newTheme = curTheme == 'dark' ? 'light' : 'dark'
     const newThemeName = newTheme == 'light' ? 'winter' : 'night'
-    const whole_container = document.querySelector(".whole_container");
-    console.log(newTheme)
-    console.log(newThemeName)
+    const whole_container = document.querySelector("html");
     whole_container.setAttribute('data-theme', newThemeName)
     window.localStorage.setItem('theme', newTheme)
   };

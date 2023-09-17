@@ -10,13 +10,13 @@ function IndexPage( {data} ) {
     const curTheme = window.localStorage.getItem('theme') || 'light'
     window.localStorage.setItem('theme', curTheme)
 
-    const whole_container = document.querySelector(".whole_container")
+    const whole_container = document.querySelector("html")
     const newTheme = curTheme=='light' ? 'winter' : 'night'
     whole_container.setAttribute('data-theme', newTheme)
   })
 
   return (
-    <div data-theme="winter" className="whole_container h-full"> {/* night */}
+    <div className="whole_container h-full"> {/* night */}
       <Navbar data={data} />
       <div className="max-w-2xl pt-16 mx-auto">
         <CardsArea data={data.allMarkdownRemark.edges} />

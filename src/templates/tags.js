@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useEffect } from "react"
 import { graphql } from "gatsby"
 import { Navbar } from "../components/Navbar"
 import { CardsArea } from "../components/CardsArea"
@@ -6,11 +7,21 @@ import { CardsArea } from "../components/CardsArea"
 export default function tagsPageTemplate({ pageContext, data }) {
   const tag = pageContext.node
   const filteredData = data.allMarkdownRemark.edges.filter(({node}) => {
+
+  useEffect(() => {
+    const curTheme = window.localStorage.getItem('theme') || 'light'
+    window.localStorage.setItem('theme', curTheme)
+
+    const whole_container = document.querySelector("html")
+    const newTheme = curTheme=='light' ? 'winter' : 'night'
+    whole_container.setAttribute('data-theme', newTheme)
+  })
+
     return node.frontmatter.tags.includes(tag)
   })
 
     return (
-      <div data-theme="winter" className="whole_container h-full"> {/* night */}
+      <div className="whole_container h-full"> {/* night */}
         <Navbar data={data} />
         <div className="max-w-2xl pt-16 mx-auto">
           <div className="p-8">
