@@ -8,9 +8,6 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  flags: {
-    DEV_SSR: true
-  },
   siteMetadata: {
     title: `Jindun Blog`,
     description: `This is a blog`,
