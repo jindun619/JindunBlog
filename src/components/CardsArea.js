@@ -1,11 +1,17 @@
 import * as React from "react";
+import { useEffect } from "react"
 
 import { Card } from "../components/Card";
 
 function CardsArea(props) {
+  useEffect(() => {
+    const fadeInTransition = document.querySelector(".fadeInTransition")
+    fadeInTransition.classList.remove("opacity-0")
+  })
+
   const data = props.data;
   return (
-    <div className="mt-4 border-t-4">
+    <div className="mt-4 border-t-4 opacity-0 fadeInTransition">
       {data.map(({node}) => (
         <Card key={node.frontmatter.title} title={node.frontmatter.title} content={node.excerpt} date={node.frontmatter.date} tags={node.frontmatter.tags} link={node.frontmatter.slug} />
       ))}

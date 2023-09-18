@@ -3,7 +3,7 @@ import { Tag } from "../components/Tag";
 import { Link } from "gatsby";
 
 function Card(props) {
-  const tags = props.tags.map((tagName) => (<Tag key={tagName} name={tagName} size="xs" />))
+  const tags = props.tags.map((tagName) => (<Tag key={tagName} name={tagName} size="xs" noHover={true} />))
 
   return (
     <div className="card-normal font-sans cursor-pointer hover:bg-primary-content">

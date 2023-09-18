@@ -18,6 +18,10 @@
     @apply pl-8
 }
 
+.fadeInTransition {
+    transition: all 1s ease-in-out
+}
+
 .prose header {
     @apply border-b-4 mb-10
 }

@@ -6,6 +6,9 @@ import { Tag } from "../../components/Tag"
 
 export default function BlogPostTemplate({data}) {
   useEffect(() => {
+    const fadeInTransition = document.querySelector(".fadeInTransition")
+    fadeInTransition.classList.remove("opacity-0")
+
     const curTheme = window.localStorage.getItem('theme') || 'light'
     window.localStorage.setItem('theme', curTheme)
 
@@ -18,12 +21,12 @@ export default function BlogPostTemplate({data}) {
   const {frontmatter, html} = markdownRemark
 
   const tags = frontmatter.tags.map((node) => (
-    <Tag key={node} name={node} size="xs" />
+    <Tag key={node} name={node} size="xs" noHover={true} />
   ))
   return (
     <div className="whole_container h-full"> {/* night */}
       <Navbar data={data} />
-      <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0">
+      <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0 opacity-0 fadeInTransition">
         <article className="prose">
           <header>
             <h1>{frontmatter.title}</h1>
