@@ -6,8 +6,15 @@ function Tag({ name, size, noHover }) {
   } else {
     var hover = ""
   }
+
+  if(size === "xs") {
+    var btnSize = "btn-xs"
+  } else if(size === "sm") {
+    var btnSize = "btn-sm"
+  }
+
   return (
-    <button className={`btn btn-${size} btn-outline normal-case ${hover}`}>{name}</button>
+    <button className={`btn ${btnSize} btn-outline normal-case ${hover}`}>{name}</button>
   )
 }
 
