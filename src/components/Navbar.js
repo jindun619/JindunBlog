@@ -3,16 +3,16 @@ import { Link } from "gatsby";
 import { Tag } from "./Tag";
 
 function Navbar({data}) {
-    var prevScrollpos = window.scrollY;
-  window.onscroll = function() {
-    var currentScrollPos = window.scrollY;
-    if (prevScrollpos > currentScrollPos) {
-      document.querySelector(".navbar").style.top = "0";
-    } else {
-      document.querySelector(".navbar").style.top = "-100px";
-    }
-    prevScrollpos = currentScrollPos;
-  }
+  //   var prevScrollpos = window.scrollY;
+  // window.onscroll = function() {
+  //   var currentScrollPos = window.scrollY;
+  //   if (prevScrollpos > currentScrollPos) {
+  //     document.querySelector(".navbar").style.top = "0";
+  //   } else {
+  //     document.querySelector(".navbar").style.top = "-100px";
+  //   }
+  //   prevScrollpos = currentScrollPos;
+  // }
 
   const {allMarkdownRemark} = data
   const tags = allMarkdownRemark.distinct.map((it, idx) => (
