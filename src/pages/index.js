@@ -10,7 +10,8 @@ import { CardsArea } from "../components/CardsArea";
 function IndexPage( {data} ) {
 
   useEffect(() => {
-    const curTheme = window.localStorage.getItem('theme') || 'light'
+    const systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    const curTheme = window.localStorage.getItem('theme') || systemTheme
     window.localStorage.setItem('theme', curTheme)
 
     const whole_container = document.querySelector("html")
