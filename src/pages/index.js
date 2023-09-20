@@ -22,8 +22,10 @@ function IndexPage( {data} ) {
   const navbarData = data.navbar
 
   return (
-    <Helmet>
-      <meta name="google-site-verification" content="_ugXUv4-9ZFkQIhcRLxyyHKcnw1eQKy6qIrko9xhsak" />
+    <div>
+      <Helmet>
+        <meta name="google-site-verification" content="_ugXUv4-9ZFkQIhcRLxyyHKcnw1eQKy6qIrko9xhsak" />
+      </Helmet>
       <div className="whole_container h-full">
         <Navbar data={navbarData} />
         <div className="max-w-2xl mx-auto">
@@ -35,7 +37,7 @@ function IndexPage( {data} ) {
           <CardsArea data={postsData.edges} />
         </div>
       </div>
-    </Helmet>
+    </div>
   );
 }
 
