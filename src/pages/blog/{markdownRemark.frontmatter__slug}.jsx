@@ -1,7 +1,6 @@
 import * as React from "react"
 import { useEffect } from "react"
-import { graphql } from "gatsby"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { Navbar } from "../../components/Navbar";
 import { TagBtn } from "../../components/TagBtn"
 

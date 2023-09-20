@@ -26,7 +26,7 @@ export default function ByCategoryTemplate({ pageContext, data }) {
   return (
     <div className="whole_container h-full">
       <Navbar data={navbarData} />
-      <div className="listByTag max-w-2xl pt-16 mx-auto">
+      <div className="listByCategory max-w-2xl pt-16 mx-auto">
         <article className="prose">
           <h1>{`# ${selectedCategory}`}</h1>
           <figcaption>{`총 ${filteredData.length}개의 포스트`}</figcaption>
