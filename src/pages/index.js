@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { graphql } from "gatsby";
 
 import { Navbar } from "../components/Navbar";
+import { Bio } from "../components/Bio"
 import { CardsArea } from "../components/CardsArea";
 
 function IndexPage( {data} ) {
@@ -22,6 +23,8 @@ function IndexPage( {data} ) {
     <div className="whole_container h-full">
       <Navbar data={navbarData} />
       <div className="max-w-2xl mx-auto">
+        {/* BIO */}
+        <Bio />
         <article className="prose">
           <figcaption className="pl-8 mt-4">{`총 ${postsData.edges.length}개의 포스트`}</figcaption>
         </article>
