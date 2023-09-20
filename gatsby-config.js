@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-postcss',
     `gatsby-plugin-image`,
-    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
