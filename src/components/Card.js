@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Tag } from "../components/Tag";
+import { TagBtn } from "../components/TagBtn";
 import { Link } from "gatsby";
 
 function Card(props) {
-  const tags = props.tags.map((tagName) => (<Tag key={tagName} name={tagName} size="xs" noHover={true} />))
+  const tags = props.tags.map((tagName) => (<TagBtn key={tagName} name={tagName} noHover={true} />))
 
   return (
     <div className="card-normal font-sans cursor-pointer hover:bg-primary-content">

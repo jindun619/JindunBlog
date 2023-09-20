@@ -1,8 +1,9 @@
 import * as React from "react"
 import { useEffect } from "react"
 import { graphql } from "gatsby"
+import { Link } from "gatsby"
 import { Navbar } from "../../components/Navbar";
-import { Tag } from "../../components/Tag"
+import { TagBtn } from "../../components/TagBtn"
 
 export default function BlogPostTemplate({data}) {
   useEffect(() => {
@@ -21,10 +22,12 @@ export default function BlogPostTemplate({data}) {
   const {frontmatter, html} = markdownRemark
 
   const tags = frontmatter.tags.map((node) => (
-    <Tag key={node} name={node} size="xs" noHover={true} />
+    <Link key={node} to={`/tag=${node}`}>
+      <TagBtn name={node} />
+    </Link>
   ))
   return (
-    <div className="whole_container h-full"> {/* night */}
+    <div className="whole_container h-full">
       <Navbar data={data} />
       <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0 opacity-0 fadeInTransition">
         <article className="prose">
@@ -54,8 +57,7 @@ query MyQuery($id: String!) {
     html
   }
   allMarkdownRemark {
-    distinct(field: {frontmatter: {tags: SELECT}})
-    totalCount
+    distinct(field: {frontmatter: {category: SELECT}})
   }
 }
 `

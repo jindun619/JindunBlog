@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useEffect } from "react"
 import { Link } from "gatsby";
-import { Tag } from "./Tag";
+import { CategoryBtn } from "./CategoryBtn";
 
 function Navbar({ data }) {
 
@@ -19,12 +19,10 @@ function Navbar({ data }) {
   })
   
   const {allMarkdownRemark} = data
-  console.log(data)
-  console.log(allMarkdownRemark)
-  const tags = allMarkdownRemark.distinct.map((it, idx) => (
+  const categories = allMarkdownRemark.distinct.map((it, idx) => (
     <Link key={idx} to={`/category=${it}`}>
       <li className="my-2">
-        <Tag name={it} size="sm" />
+        <CategoryBtn name={it} />
       </li>
     </Link>
   ))
@@ -71,7 +69,7 @@ function Navbar({ data }) {
                   Categories<div className="badge badge-ghost">{allMarkdownRemark.distinct.length}</div>
                 </h1>
               </article>
-              {tags}
+              {categories}
             </ul>
           </div>
         </div>

@@ -16,7 +16,7 @@ function IndexPage( {data} ) {
   })
 
   return (
-    <div className="whole_container h-full"> {/* night */}
+    <div className="whole_container h-full">
       <Navbar data={data} />
       <div className="max-w-2xl mx-auto">
         <article className="prose">

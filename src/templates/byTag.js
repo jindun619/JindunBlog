@@ -3,11 +3,9 @@ import { useEffect } from "react"
 import { graphql } from "gatsby"
 import { Navbar } from "../components/Navbar"
 import { CardsArea } from "../components/CardsArea"
+import { TagBtn } from "../components/TagBtn"
 
-export default function byTagTemplate({ pageContext, data }) {
-  const tag = pageContext.node
-  const filteredData = data.allMarkdownRemark.edges.filter(({node}) => {
-
+export default function ByTagTemplate({ pageContext, data }) {
   useEffect(() => {
     const curTheme = window.localStorage.getItem('theme') || 'light'
     window.localStorage.setItem('theme', curTheme)
@@ -16,14 +14,20 @@ export default function byTagTemplate({ pageContext, data }) {
     const newTheme = curTheme === 'light' ? 'winter' : 'night'
     whole_container.setAttribute('data-theme', newTheme)
   })
-
+  
+  const tag = pageContext.node
+  const filteredData = data.allMarkdownRemark.edges.filter(({node}) => {
     return node.frontmatter.tags.includes(tag)
   })
-
+  
+  
     return (
-      <div className="whole_container h-full"> {/* night */}
+      <div className="whole_container h-full">
         <Navbar data={data} />
         <div className="listByTag max-w-2xl pt-16 mx-auto">
+          <div className="flex flex-wrap gat-3">
+a
+          </div>
           <article className="prose">
             <h1>{`# ${tag}`}</h1>
             <figcaption>{`총 ${filteredData.length}개의 포스트`}</figcaption>
@@ -48,8 +52,7 @@ export const pageQuery = graphql`
           excerpt
         }
       }
-      distinct(field: {frontmatter: {tags: SELECT}})
-      totalCount
+      distinct(field: {frontmatter: {category: SELECT}})
     }
   }
 `
