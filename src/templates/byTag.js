@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import { Navbar } from "../components/Navbar"
 import { CardsArea } from "../components/CardsArea"
 
-export default function tagsPageTemplate({ pageContext, data }) {
+export default function byTagTemplate({ pageContext, data }) {
   const tag = pageContext.node
   const filteredData = data.allMarkdownRemark.edges.filter(({node}) => {
 
@@ -13,7 +13,7 @@ export default function tagsPageTemplate({ pageContext, data }) {
     window.localStorage.setItem('theme', curTheme)
 
     const whole_container = document.querySelector("html")
-    const newTheme = curTheme=='light' ? 'winter' : 'night'
+    const newTheme = curTheme === 'light' ? 'winter' : 'night'
     whole_container.setAttribute('data-theme', newTheme)
   })
 

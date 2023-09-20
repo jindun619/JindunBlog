@@ -1,16 +1,18 @@
 import * as React from "react";
 
 function Tag({ name, size, noHover }) {
+  var hover, btnSize
+  
   if(noHover) {
-    var hover = "hover:bg-transparent hover:text-base-content"
+    hover = "hover:bg-transparent hover:text-base-content"
   } else {
-    var hover = ""
+    hover = ""
   }
 
   if(size === "xs") {
-    var btnSize = "btn-xs"
+    btnSize = "btn-xs"
   } else if(size === "sm") {
-    var btnSize = "btn-sm"
+    btnSize = "btn-sm"
   }
 
   return (

@@ -3,7 +3,8 @@ import { useEffect } from "react"
 import { Link } from "gatsby";
 import { Tag } from "./Tag";
 
-function Navbar({data}) {
+function Navbar({ data }) {
+
   useEffect(() => {
     var prevScrollpos = window.scrollY;
     window.onscroll = function() {
@@ -16,10 +17,12 @@ function Navbar({data}) {
       prevScrollpos = currentScrollPos;
     }
   })
-
+  
   const {allMarkdownRemark} = data
+  console.log(data)
+  console.log(allMarkdownRemark)
   const tags = allMarkdownRemark.distinct.map((it, idx) => (
-    <Link key={idx} to={`/tags/${it}`}>
+    <Link key={idx} to={`/category=${it}`}>
       <li className="my-2">
         <Tag name={it} size="sm" />
       </li>
@@ -29,8 +32,8 @@ function Navbar({data}) {
   const toggleTheme = () => {
     console.log("clicked")
     const curTheme = window.localStorage.getItem('theme')
-    const newTheme = curTheme == 'dark' ? 'light' : 'dark'
-    const newThemeName = newTheme == 'light' ? 'winter' : 'night'
+    const newTheme = curTheme === 'dark' ? 'light' : 'dark'
+    const newThemeName = newTheme === 'light' ? 'winter' : 'night'
     const whole_container = document.querySelector("html");
     whole_container.setAttribute('data-theme', newThemeName)
     window.localStorage.setItem('theme', newTheme)
@@ -43,7 +46,7 @@ function Navbar({data}) {
         <div className="drawer">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
-            <label htmlFor="my-drawer" tabIndex={0} className="btn btn-primary btn-circle drawer-button">
+            <label htmlFor="my-drawer" className="btn btn-primary btn-circle drawer-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -65,11 +68,9 @@ function Navbar({data}) {
             <ul className="menu p-4 ml-0 w-80 min-h-full bg-base-200">
               <article className="prose m-5">
                 <h1>
-                  Tags<div className="badge badge-ghost">{allMarkdownRemark.totalCount}</div>
+                  Categories<div className="badge badge-ghost">{allMarkdownRemark.distinct.length}</div>
                 </h1>
               </article>
-              {/* <li><a className="no-underline">Sidebar Item 1</a></li>
-              <li><a>Sidebar Item 2</a></li> */}
               {tags}
             </ul>
           </div>

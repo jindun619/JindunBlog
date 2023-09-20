@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export default () => {
+function WritePost () {
     return(
         <div className="flex w-full">
             <div className="grids bg-base-300 place-items-center">
@@ -15,3 +15,5 @@ export default () => {
       </div>
     )
 }
+
+export default WritePost

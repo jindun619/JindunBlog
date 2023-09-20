@@ -11,7 +11,7 @@ function IndexPage( {data} ) {
     window.localStorage.setItem('theme', curTheme)
 
     const whole_container = document.querySelector("html")
-    const newTheme = curTheme=='light' ? 'winter' : 'night'
+    const newTheme = curTheme==='light' ? 'winter' : 'night'
     whole_container.setAttribute('data-theme', newTheme)
   })
 
@@ -44,7 +44,7 @@ export const pageQuery = graphql`
           excerpt
         }
       }
-      distinct(field: {frontmatter: {tags: SELECT}})
+      distinct(field: {frontmatter: {category: SELECT}})
       totalCount
     }
   }

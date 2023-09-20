@@ -1,17 +1,32 @@
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const result = await graphql(`
+  const result1 = await graphql(`
     query MyQuery {
       allMarkdownRemark {
         distinct(field: {frontmatter: {tags: SELECT}})
       }
     }
   `)
-  result.data.allMarkdownRemark.distinct.forEach((node) => {
+  result1.data.allMarkdownRemark.distinct.forEach((node) => {
     createPage({
-      path: `/tags/${node}`,
-      component: require.resolve(`./src/templates/tags.js`),
+      path: `/tag=${node}`,
+      component: require.resolve(`./src/templates/byTag.js`),
+      context: { node: node }
+    })
+  })
+
+  const result2 = await graphql(`
+    query MyQuery {
+      allMarkdownRemark {
+        distinct(field: {frontmatter: {category: SELECT}})
+      }
+    }
+  `)
+  result2.data.allMarkdownRemark.distinct.forEach((node) => {
+    createPage({
+      path: `/category=${node}`,
+      component: require.resolve(`./src/templates/byCategory.js`),
       context: { node: node }
     })
   })
