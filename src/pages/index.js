@@ -7,7 +7,13 @@ import { Bio } from "../components/Bio"
 import { CardsArea } from "../components/CardsArea";
 
 function IndexPage( {data} ) {
+
   useEffect(() => {
+    const metaTag = document.createElement("meta")
+    metaTag.setAttribute("name", "google-site-verification")
+    metaTag.setAttribute("content", "_ugXUv4-9ZFkQIhcRLxyyHKcnw1eQKy6qIrko9xhsak")
+    document.querySelector("head").appendChild(metaTag)
+
     const curTheme = window.localStorage.getItem('theme') || 'light'
     window.localStorage.setItem('theme', curTheme)
 
