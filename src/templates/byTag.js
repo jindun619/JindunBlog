@@ -49,17 +49,6 @@ export default function ByTagTemplate({ pageContext, data }) {
           </article>
           <div className="flex flex-wrap gap-2">
             {tags}
-            <TagBtn name="there" />
-            <TagBtn name="are" />
-            <TagBtn name="lots" />
-            <TagBtn name="of" />
-            <TagBtn name="tags" />
-            <TagBtn name="such" />
-            <TagBtn name="as" />
-            <TagBtn name="lorem" />
-            <TagBtn name="tag" />
-            <TagBtn name="ipsum" />
-            <TagBtn name="tag" />
           </div>
           <article className="prose prose2">
             <figcaption>{`총 ${filteredData.length}개의 포스트`}</figcaption>
