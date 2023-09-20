@@ -12,11 +12,12 @@ module.exports = {
     title: `Jindun Blog`,
     description: `This is a blog`,
     author: `@gatsbyjs`,
-    siteUrl: `https://jindunblog.netlify.app/`,
+    siteUrl: `https://hoojun.kim/`,
   },
   plugins: [
     'gatsby-plugin-postcss',
     `gatsby-plugin-image`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
