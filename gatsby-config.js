@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Jindun Blog`,
+    title: `Hoojun.Kim`,
     description: `This is a blog`,
     author: `@gatsbyjs`,
     siteUrl: `https://hoojun.kim/`,
@@ -18,6 +18,7 @@ module.exports = {
     'gatsby-plugin-postcss',
     `gatsby-plugin-image`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -75,7 +75,7 @@ function Navbar({ data }) {
       {/**********/}
       <div className="navbar-center">
         <Link to="/" className="btn btn-primary normal-case text-xl">
-          JINDUN
+          Hoojun.Kim
         </Link>
       </div>
       <div className="navbar-end">
