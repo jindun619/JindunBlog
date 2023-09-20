@@ -25,6 +25,7 @@ function IndexPage( {data} ) {
       <div className="max-w-2xl mx-auto">
         {/* BIO */}
         <Bio />
+        <h1>updated!</h1>
         <article className="prose">
           <figcaption className="pl-8 mt-4">{`총 ${postsData.edges.length}개의 포스트`}</figcaption>
         </article>
