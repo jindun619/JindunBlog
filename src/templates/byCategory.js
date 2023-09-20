@@ -15,14 +15,17 @@ export default function ByCategoryTemplate({ pageContext, data }) {
     whole_container.setAttribute('data-theme', newTheme)
   })
 
+  const postsData = data.posts
+  const navbarData = data.navbar
+
   const selectedCategory = pageContext.node
-  const filteredData = data.allMarkdownRemark.edges.filter(({node}) => {
+  const filteredData = postsData.edges.filter(({node}) => {
     return node.frontmatter.category[0] === selectedCategory
   })
 
   return (
     <div className="whole_container h-full">
-      <Navbar data={data} />
+      <Navbar data={navbarData} />
       <div className="listByTag max-w-2xl pt-16 mx-auto">
         <article className="prose">
           <h1>{`# ${selectedCategory}`}</h1>
@@ -36,7 +39,7 @@ export default function ByCategoryTemplate({ pageContext, data }) {
 
 export const pageQuery = graphql`
   query MyQuery {
-    allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    posts: allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           frontmatter {
@@ -49,8 +52,9 @@ export const pageQuery = graphql`
           excerpt
         }
       }
+    }
+    navbar: allMarkdownRemark {
       distinct(field: {frontmatter: {category: SELECT}})
-      totalCount
     }
   }
 `

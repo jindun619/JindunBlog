@@ -15,18 +15,20 @@ export default function ByTagTemplate({ pageContext, data }) {
     whole_container.setAttribute('data-theme', newTheme)
   })
   
+  const postsData = data.posts
+  const navbarData = data.navbar
+
   const tag = pageContext.node
-  const filteredData = data.allMarkdownRemark.edges.filter(({node}) => {
+  const filteredData = postsData.edges.filter(({node}) => {
     return node.frontmatter.tags.includes(tag)
   })
   
   
     return (
       <div className="whole_container h-full">
-        <Navbar data={data} />
+        <Navbar data={navbarData} />
         <div className="listByTag max-w-2xl pt-16 mx-auto">
           <div className="flex flex-wrap gat-3">
-a
           </div>
           <article className="prose">
             <h1>{`# ${tag}`}</h1>
@@ -40,7 +42,7 @@ a
 
 export const pageQuery = graphql`
   query MyQuery {
-    allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    posts: allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           frontmatter {
@@ -52,6 +54,8 @@ export const pageQuery = graphql`
           excerpt
         }
       }
+    }
+    navbar: allMarkdownRemark {
       distinct(field: {frontmatter: {category: SELECT}})
     }
   }

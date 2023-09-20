@@ -3,13 +3,12 @@ import { useEffect } from "react"
 
 import { Card } from "../components/Card";
 
-function CardsArea(props) {
+function CardsArea({ data }) {
   useEffect(() => {
     const fadeInTransition = document.querySelector(".fadeInTransition")
     fadeInTransition.classList.remove("opacity-0")
   })
 
-  const data = props.data;
   return (
     <div className="mt-4 border-t-4 opacity-0 fadeInTransition">
       {data.map(({node}) => (

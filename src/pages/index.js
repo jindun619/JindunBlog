@@ -15,14 +15,17 @@ function IndexPage( {data} ) {
     whole_container.setAttribute('data-theme', newTheme)
   })
 
+  const postsData = data.posts
+  const navbarData = data.navbar
+
   return (
     <div className="whole_container h-full">
-      <Navbar data={data} />
+      <Navbar data={navbarData} />
       <div className="max-w-2xl mx-auto">
         <article className="prose">
-          <figcaption className="pl-8 mt-4">{`총 ${data.allMarkdownRemark.edges.length}개의 포스트`}</figcaption>
+          <figcaption className="pl-8 mt-4">{`총 ${postsData.edges.length}개의 포스트`}</figcaption>
         </article>
-        <CardsArea data={data.allMarkdownRemark.edges} />
+        <CardsArea data={postsData.edges} />
       </div>
     </div>
   );
@@ -32,7 +35,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query MyQuery {
-    allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    posts: allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           frontmatter {
@@ -44,8 +47,9 @@ export const pageQuery = graphql`
           excerpt
         }
       }
+    }
+    navbar: allMarkdownRemark {
       distinct(field: {frontmatter: {category: SELECT}})
-      totalCount
     }
   }
 `

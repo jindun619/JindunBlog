@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import { CategoryBtn } from "./CategoryBtn";
 
 function Navbar({ data }) {
-
   useEffect(() => {
     var prevScrollpos = window.scrollY;
     window.onscroll = function() {
@@ -18,8 +17,7 @@ function Navbar({ data }) {
     }
   })
   
-  const {allMarkdownRemark} = data
-  const categories = allMarkdownRemark.distinct.map((it, idx) => (
+  const categories = data.distinct.map((it, idx) => (
     <Link key={idx} to={`/category=${it}`}>
       <li className="my-2">
         <CategoryBtn name={it} />
@@ -66,7 +64,7 @@ function Navbar({ data }) {
             <ul className="menu p-4 ml-0 w-80 min-h-full bg-base-200">
               <article className="prose m-5">
                 <h1>
-                  Categories<div className="badge badge-ghost">{allMarkdownRemark.distinct.length}</div>
+                  Categories<div className="badge badge-ghost">{data.distinct.length}</div>
                 </h1>
               </article>
               {categories}

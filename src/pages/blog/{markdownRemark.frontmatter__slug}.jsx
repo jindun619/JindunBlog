@@ -18,17 +18,20 @@ export default function BlogPostTemplate({data}) {
     whole_container.setAttribute('data-theme', newTheme)
   })
 
-  const {markdownRemark} = data
-  const {frontmatter, html} = markdownRemark
+  const postData = data.post
+  const navbarData = data.navbar
+
+  const { frontmatter } = postData
+  const { html } = postData
 
   const tags = frontmatter.tags.map((node) => (
-    <Link key={node} to={`/tag=${node}`}>
-      <TagBtn name={node} />
+    <Link key={node} to={`/tag=${node}`} style={{textDecoration: 'none'}}>
+      <TagBtn name={node}/>
     </Link>
   ))
   return (
     <div className="whole_container h-full">
-      <Navbar data={data} />
+      <Navbar data={navbarData} />
       <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0 opacity-0 fadeInTransition">
         <article className="prose">
           <header>
@@ -48,7 +51,7 @@ export default function BlogPostTemplate({data}) {
 
 export const pageQuery = graphql`
 query MyQuery($id: String!) {
-  markdownRemark(id: { eq: $id }) {
+  post: markdownRemark(id: { eq: $id }) {
     frontmatter {
       date
       tags
@@ -56,7 +59,7 @@ query MyQuery($id: String!) {
     }
     html
   }
-  allMarkdownRemark {
+  navbar: allMarkdownRemark {
     distinct(field: {frontmatter: {category: SELECT}})
   }
 }
