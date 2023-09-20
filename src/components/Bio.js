@@ -12,8 +12,8 @@ function Bio() {
             <strong className="bg-primary-content px-1.5 py-0.5 rounded-lg"><a href="#!">@Jindun</a></strong>
             <p className="mt-2 text-base-content">lorem ipsum foo bar</p>
             <span><a href="#!" className="link link-primary no-underline mr-2">About</a></span>
-            <span><a href="#!" className="link link-primary no-underline mr-2">Github</a></span>
-            <span><a href="#!" className="link link-primary no-underline mr-3">Instagram</a></span>
+            <span><a href="https://github.com/jindun619" className="link link-primary no-underline mr-2">Github</a></span>
+            <span><a href="https://www.instagram.com/kimhoojun/" className="link link-primary no-underline mr-3">Instagram</a></span>
           </div>
         </div>
     )
