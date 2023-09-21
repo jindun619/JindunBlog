@@ -44,7 +44,7 @@ export default function ByCategoryTemplate({ pageContext, data }) {
       )
     } else {
       return (
-        <Link key={node} to={`/category=${node}`}>
+        <Link key={node} to={`/category=${node}`} style={{textDecoration: 'none'}}>
           <CategoryBtn key={node} name={`${node}(${count})`} />
         </Link>
       )

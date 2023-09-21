@@ -79,7 +79,8 @@ function Navbar({ data }) {
         </Link>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-primary btn-circle">
+        {/* search btn zan shi bu yong */}
+        {/* <button className="btn btn-primary btn-circle">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -94,7 +95,7 @@ function Navbar({ data }) {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
-        </button>
+        </button> */}
         <button className="btn btn-primary btn-circle">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
