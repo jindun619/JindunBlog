@@ -80,8 +80,9 @@ module.exports = {
         resolve: 'gatsby-plugin-robots-txt',
         options: {
           host:'https://hoojun.kim/',
-            sitemap: 'https://hoojun.kim/sitemap-index.xml',
-            policy:[{ userAgent: '*', allow: '/'}],
-      },  
+          sitemap: 'https://hoojun.kim/sitemap-index.xml',
+          policy:[{ userAgent: '*', allow: '/'}],
+      },
+    }  
   ],
 }
