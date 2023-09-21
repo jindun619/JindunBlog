@@ -10,9 +10,9 @@ function Card(props) {
       <Link to={`/blog${props.link}`} className="no-underline">
         <div className="card-body">
           <h2 className="card-titles text-3xl font-bold text-primary">{props.title}</h2>
-          <p className="text-base-content font-semibold mb-0">{props.content}</p>
+          <p className="text-base text-base-content font-semibold mb-0">{props.content}</p>
           <div className="flex flex-wrap gap-2">
-            <div><p className="text-base-content mb-0">{props.date}</p></div>
+            <div><p className="text-sm text-neutral-content font-semibold mb-0">{props.date}</p></div>
             {tags}
           </div>
         </div>

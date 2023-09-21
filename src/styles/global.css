@@ -46,6 +46,10 @@
     @apply text-5xl mb-4 border-none
 }
 
+.prose header p {
+    @apply text-neutral-content
+}
+
 .mdSyntax h1 {
     @apply text-4xl border-b
 }

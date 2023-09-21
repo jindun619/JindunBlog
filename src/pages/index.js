@@ -17,6 +17,8 @@ function IndexPage( {data} ) {
     const whole_container = document.querySelector("html")
     const newTheme = curTheme==='light' ? 'winter' : 'night'
     whole_container.setAttribute('data-theme', newTheme)
+
+    
   })
 
   const postsData = data.posts
