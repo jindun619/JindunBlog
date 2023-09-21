@@ -26,6 +26,7 @@ function IndexPage( {data} ) {
     <div>
       <Helmet>
         <meta name="google-site-verification" content="_ugXUv4-9ZFkQIhcRLxyyHKcnw1eQKy6qIrko9xhsak" />
+        <meta name="naver-site-verification" content="1ac14aae744cb6ea0e41eb304d628d302ba07e60" />
       </Helmet>
       <div className="whole_container h-full">
         <Navbar data={navbarData} />
