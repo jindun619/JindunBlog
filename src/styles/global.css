@@ -51,27 +51,27 @@
 }
 
 .mdSyntax h1 {
-    @apply text-4xl border-b
+    @apply text-4xl
 }
 
 .mdSyntax h2 {
-    @apply text-3xl border-b
+    @apply text-3xl
 }
 
 .mdSyntax h3 {
-    @apply text-2xl border-b
+    @apply text-2xl
 }
 
 .mdSyntax h4 {
-    @apply text-xl border-b
+    @apply text-xl
 }
 
 .mdSyntax h5 {
-    @apply text-lg border-b
+    @apply text-lg
 }
 
 .mdSyntax h6 {
-    @apply text-base border-b
+    @apply text-base
 }
 
 .mdSyntax p {
