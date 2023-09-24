@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import { Navbar } from "../../components/Navbar";
 import { TagBtn } from "../../components/TagBtn"
 import { Bio } from "../../components/Bio"
+import { Footer } from "../../components/Footer"
 
 export default function BlogPostTemplate({data}) {
   useEffect(() => {
@@ -32,9 +33,9 @@ export default function BlogPostTemplate({data}) {
   ))
 
   const references = frontmatter.references.map((node) => (
-    <div><a className="link">{node}</a></div>
+    <div key={node}><a className="link">{node}</a></div>
   ))
-
+  
   return (
     <div className="whole_container h-full">
       <Navbar data={navbarData} />
@@ -49,12 +50,15 @@ export default function BlogPostTemplate({data}) {
             dangerouslySetInnerHTML={{ __html: html }}
             className="mdSyntax pb-8 border-b-2"
           />
-          <div className="border-b-2">
-            <h2>참고</h2>
+          <div className={frontmatter.references.length != 0 ? "border-b-2 pb-8" : ""}>
+            <h2>{frontmatter.references.length != 0 ? "참고" : ""}</h2>
             {references}
           </div>
         </article>
         <Bio />
+        {/* FOOTER */}
+        <Footer />
+        
       </div>
     </div>
   )

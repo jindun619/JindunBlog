@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import { Navbar } from "../components/Navbar"
 import { CardsArea } from "../components/CardsArea"
 import { TagBtn } from "../components/TagBtn"
+import { Footer } from "../components/Footer"
 
 export default function ByTagTemplate({ pageContext, data }) {
   useEffect(() => {
@@ -55,6 +56,8 @@ export default function ByTagTemplate({ pageContext, data }) {
           </article>
           <CardsArea data={filteredData} />
         </div>
+        {/* FOOTER */}
+        <Footer />
       </div>
     )
 }

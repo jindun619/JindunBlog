@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import { Navbar } from "../components/Navbar";
 import { Bio } from "../components/Bio"
 import { CardsArea } from "../components/CardsArea";
+import { Footer } from "../components/Footer"
 
 function IndexPage( {data} ) {
 
@@ -37,6 +38,8 @@ function IndexPage( {data} ) {
             <figcaption className="ml-4 mt-4">{`총 ${postsData.edges.length}개의 포스트`}</figcaption>
           </article>
           <CardsArea data={postsData.edges} />
+        {/* FOOTER */}
+        <Footer />
         </div>
       </div>
     </div>

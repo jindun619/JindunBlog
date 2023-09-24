@@ -5,6 +5,7 @@ import { graphql, Link } from "gatsby"
 import { Navbar } from "../components/Navbar"
 import { CardsArea } from "../components/CardsArea"
 import { CategoryBtn } from "../components/CategoryBtn"
+import { Footer } from "../components/Footer"
 
 export default function ByCategoryTemplate({ pageContext, data }) {
   useEffect(() => {
@@ -66,6 +67,8 @@ export default function ByCategoryTemplate({ pageContext, data }) {
         </article>
         <CardsArea data={filteredData} />
       </div>
+      {/* FOOTER */}
+      <Footer />
     </div>
   );
 }
