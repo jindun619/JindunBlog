@@ -8,14 +8,11 @@ import { Bio } from "../../components/Bio"
 import { Footer } from "../../components/Footer"
 import { Comment } from "../../components/Comment"
 
-export default function BlogPostTemplate({data}) {
-  useEffect(() => {
-    // SETTING THEME
-    const systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'winter'
-    const curTheme = window.localStorage.getItem('theme') || systemTheme
-    document.querySelector("html").setAttribute('data-theme', curTheme)
-    window.localStorage.setItem('theme', curTheme)
+import { useTheme } from "../../hooks/useTheme"
 
+export default function BlogPostTemplate({data}) {
+  useTheme("")
+  useEffect(() => {
     // FADE IN TRANSITION
     const fadeInTransition = document.querySelector(".fadeInTransition")
     fadeInTransition.classList.remove("opacity-0")

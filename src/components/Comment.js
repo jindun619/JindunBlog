@@ -1,17 +1,17 @@
 import React, { createRef, useEffect } from "react"
 
 function Comment({ repo, title }) {
-  const theme = "github-light" //dark blue
-
   const containerRef = createRef()
   useEffect(() => {
+    const localTheme = window.localStorage.getItem("theme")
+
     const utterances = document.createElement("script")
     const attributes = {
       src: "https://utteranc.es/client.js",
       repo: "jindun619/blog-comments",
       "issue-term": title,
       label: "comments",
-      theme: theme,
+      theme: localTheme==='winter' ? 'github-light' : 'dark-blue',
       crossOrigin: "anonymous",
       async: "true",
     }
@@ -19,7 +19,7 @@ function Comment({ repo, title }) {
       utterances.setAttribute(key, value)
     })
     containerRef.current.appendChild(utterances)
-  }, [repo, theme])
+  }, [repo])
   return <div id="comment" ref={containerRef} />
 }
 

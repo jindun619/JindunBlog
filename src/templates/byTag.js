@@ -1,19 +1,15 @@
 import * as React from "react"
-import { useEffect } from "react"
 import { graphql, Link } from "gatsby"
+
 import { Navbar } from "../components/Navbar"
 import { CardsArea } from "../components/CardsArea"
 import { TagBtn } from "../components/TagBtn"
 import { Footer } from "../components/Footer"
 
+import { useTheme } from "../hooks/useTheme"
+
 export default function ByTagTemplate({ pageContext, data }) {
-  useEffect(()=> {
-    // SETTING THEME
-    const systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'winter'
-    const curTheme = window.localStorage.getItem('theme') || systemTheme
-    document.querySelector("html").setAttribute('data-theme', curTheme)
-    window.localStorage.setItem('theme', curTheme)
-  })
+  useTheme("")
 
   const postsData = data.posts
   const navbarData = data.navbar

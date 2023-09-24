@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useEffect } from "react"
 import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 
@@ -8,14 +7,10 @@ import { Bio } from "../components/Bio"
 import { CardsArea } from "../components/CardsArea";
 import { Footer } from "../components/Footer"
 
+import { useTheme } from "../hooks/useTheme"
+
 function IndexPage( {data} ) {
-  useEffect(()=> {
-    // SETTING THEME
-    const systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'winter'
-    const curTheme = window.localStorage.getItem('theme') || systemTheme
-    document.querySelector("html").setAttribute('data-theme', curTheme)
-    window.localStorage.setItem('theme', curTheme)
-  })
+  useTheme("")
 
   const postsData = data.posts
   const navbarData = data.navbar
