@@ -10,20 +10,19 @@ import { Comment } from "../../components/Comment"
 
 export default function BlogPostTemplate({data}) {
   useEffect(() => {
+    // SETTING THEME
+    const systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'winter'
+    const curTheme = window.localStorage.getItem('theme') || systemTheme
+    document.querySelector("html").setAttribute('data-theme', curTheme)
+    window.localStorage.setItem('theme', curTheme)
+
     // FADE IN TRANSITION
     const fadeInTransition = document.querySelector(".fadeInTransition")
     fadeInTransition.classList.remove("opacity-0")
   })
 
-  // SETTING THEME
-  const systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'winter'
-  const curTheme = window.localStorage.getItem('theme') || systemTheme
-  document.querySelector("html").setAttribute('data-theme', curTheme)
-  window.localStorage.setItem('theme', curTheme)
-  
   const postData = data.post
   const navbarData = data.navbar
-
   
   const { frontmatter } = postData
   const { html } = postData
