@@ -33,7 +33,9 @@ function IndexPage( {data} ) {
         <Navbar data={navbarData} />
         <div className="max-w-2xl mx-auto">
           {/* BIO */}
-          <Bio />
+          <div className="mt-16">
+            <Bio />
+          </div>
           <article className="prose">
             <figcaption className="ml-4 mt-4">{`총 ${postsData.edges.length}개의 포스트`}</figcaption>
           </article>

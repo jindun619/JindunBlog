@@ -1,10 +1,12 @@
 import * as React from "react"
 import { useEffect } from "react"
 import { graphql, Link } from "gatsby"
+
 import { Navbar } from "../../components/Navbar";
 import { TagBtn } from "../../components/TagBtn"
 import { Bio } from "../../components/Bio"
 import { Footer } from "../../components/Footer"
+import { Comment } from "../../components/Comment"
 
 export default function BlogPostTemplate({data}) {
   useEffect(() => {
@@ -20,12 +22,14 @@ export default function BlogPostTemplate({data}) {
     whole_container.setAttribute('data-theme', newTheme)
   })
 
+  
   const postData = data.post
   const navbarData = data.navbar
 
+  
   const { frontmatter } = postData
   const { html } = postData
-
+  
   const tags = frontmatter.tags.map((node) => (
     <Link key={node} to={`/tag=${node}`} style={{textDecoration: 'none'}}>
       <TagBtn name={node}/>
@@ -50,15 +54,17 @@ export default function BlogPostTemplate({data}) {
             dangerouslySetInnerHTML={{ __html: html }}
             className="mdSyntax pb-8 border-b-2"
           />
-          <div className={frontmatter.references.length != 0 ? "border-b-2 pb-8" : ""}>
-            <h2>{frontmatter.references.length != 0 ? "참고" : ""}</h2>
+          <div className={frontmatter.references.length !== 0 ? "border-b-2 pb-8" : ""}>
+            <h2>{frontmatter.references.length !== 0 ? "참고" : ""}</h2>
             {references}
           </div>
         </article>
-        <Bio />
+        <div className="pt-8 pb-16">
+          <Bio />
+        </div>
+        <Comment repo="jindun619/blog-comments" title={frontmatter.title} theme="github-light" /> {/* dark-blue */}
         {/* FOOTER */}
         <Footer />
-        
       </div>
     </div>
   )
@@ -72,6 +78,7 @@ query MyQuery($id: String!) {
       tags
       title
       references
+      slug
     }
     html
   }
