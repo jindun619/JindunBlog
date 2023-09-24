@@ -1,10 +1,11 @@
 import * as React from "react";
-import { useEffect } from "react"
+import {useEffect} from "react"
 
 import { Card } from "../components/Card";
 
 function CardsArea({ data }) {
   useEffect(() => {
+    // FADE IN TRANSITION
     const fadeInTransition = document.querySelector(".fadeInTransition")
     fadeInTransition.classList.remove("opacity-0")
   })

@@ -10,18 +10,16 @@ import { Comment } from "../../components/Comment"
 
 export default function BlogPostTemplate({data}) {
   useEffect(() => {
+    // FADE IN TRANSITION
     const fadeInTransition = document.querySelector(".fadeInTransition")
     fadeInTransition.classList.remove("opacity-0")
-
-    const systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-    const curTheme = window.localStorage.getItem('theme') || systemTheme
-    window.localStorage.setItem('theme', curTheme)
-
-    const whole_container = document.querySelector("html")
-    const newTheme = curTheme === 'light' ? 'winter' : 'night'
-    whole_container.setAttribute('data-theme', newTheme)
   })
 
+  // SETTING THEME
+  const systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'winter'
+  const curTheme = window.localStorage.getItem('theme') || systemTheme
+  document.querySelector("html").setAttribute('data-theme', curTheme)
+  window.localStorage.setItem('theme', curTheme)
   
   const postData = data.post
   const navbarData = data.navbar
@@ -62,7 +60,7 @@ export default function BlogPostTemplate({data}) {
         <div className="pt-8 pb-16">
           <Bio />
         </div>
-        <Comment repo="jindun619/blog-comments" title={frontmatter.title} theme="github-light" /> {/* dark-blue */}
+        <Comment repo="jindun619/blog-comments" title={frontmatter.title} />
         {/* FOOTER */}
         <Footer />
       </div>

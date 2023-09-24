@@ -1,6 +1,8 @@
 import React, { createRef, useEffect } from "react"
 
-function Comment({ repo, title, theme }) {
+function Comment({ repo, title }) {
+  const theme = "github-light" //dark blue
+
   const containerRef = createRef()
   useEffect(() => {
     const utterances = document.createElement("script")
