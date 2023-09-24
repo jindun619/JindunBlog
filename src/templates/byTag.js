@@ -70,7 +70,7 @@ export const pageQuery = graphql`
             slug
             tags
           }
-          excerpt
+          excerpt(truncate: true)
         }
       }
     }

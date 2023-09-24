@@ -34,7 +34,7 @@ function IndexPage( {data} ) {
           {/* BIO */}
           <Bio />
           <article className="prose">
-            <figcaption className="pl-8 mt-4">{`총 ${postsData.edges.length}개의 포스트`}</figcaption>
+            <figcaption className="mt-4">{`총 ${postsData.edges.length}개의 포스트`}</figcaption>
           </article>
           <CardsArea data={postsData.edges} />
         </div>
@@ -56,7 +56,7 @@ export const pageQuery = graphql`
             slug
             tags
           }
-          excerpt
+          excerpt(truncate: true)
         }
       }
     }

@@ -54,7 +54,7 @@ export default function ByCategoryTemplate({ pageContext, data }) {
   return (
     <div className="whole_container h-full">
       <Navbar data={navbarData} />
-      <div className="listByCategory max-w-2xl pt-16 mx-auto">
+      <div className="max-w-2xl pt-16 mx-auto">
         <article className="prose">
           <h1>
             Category: <span className="text-primary">{`${selectedCategory}`}</span>
@@ -82,7 +82,7 @@ export const pageQuery = graphql`
             tags
             category
           }
-          excerpt
+          excerpt(truncate: true)
         }
       }
     }

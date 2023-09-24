@@ -1,15 +1,12 @@
 import * as React from "react";
 
-function TagBtn({ name, noHover, isActive }) {
-  var hover, active
-  if(noHover) {
-    hover = "hover:bg-transparent hover:text-base-content"
-  }
+function TagBtn({ name, isActive }) {
+  var active
   if(isActive) {
     active = "btn-active"
   }
   return (
-    <button className={`btn btn-xs btn-outline rounded-full normal-case ${hover} ${active}`}>{name}</button>
+    <button className={`btn btn-xs btn-outline rounded-full normal-case ${active}`}>{name}</button>
   )
 }
 

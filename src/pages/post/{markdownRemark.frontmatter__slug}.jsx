@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import { Navbar } from "../../components/Navbar";
 import { TagBtn } from "../../components/TagBtn"
+import { Bio } from "../../components/Bio"
 
 export default function BlogPostTemplate({data}) {
   useEffect(() => {
@@ -29,6 +30,11 @@ export default function BlogPostTemplate({data}) {
       <TagBtn name={node}/>
     </Link>
   ))
+
+  const references = frontmatter.references.map((node) => (
+    <div><a className="link">{node}</a></div>
+  ))
+
   return (
     <div className="whole_container h-full">
       <Navbar data={navbarData} />
@@ -41,9 +47,12 @@ export default function BlogPostTemplate({data}) {
           </header>
           <div
             dangerouslySetInnerHTML={{ __html: html }}
-            className="mdSyntax"
+            className="mdSyntax pb-8 border-b-2"
           />
+          <h2>참고</h2>
+          {references}
         </article>
+        <Bio />
       </div>
     </div>
   )
@@ -56,6 +65,7 @@ query MyQuery($id: String!) {
       date
       tags
       title
+      references
     }
     html
   }
