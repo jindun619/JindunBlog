@@ -49,8 +49,10 @@ export default function BlogPostTemplate({data}) {
             dangerouslySetInnerHTML={{ __html: html }}
             className="mdSyntax pb-8 border-b-2"
           />
-          <h2>참고</h2>
-          {references}
+          <div className="border-b-2">
+            <h2>참고</h2>
+            {references}
+          </div>
         </article>
         <Bio />
       </div>

@@ -45,13 +45,13 @@ export default function ByTagTemplate({ pageContext, data }) {
         <Navbar data={navbarData} />
         <div className="listByTag max-w-2xl pt-16 mx-auto">
           <article className="prose prose1">
-            <h1>{`# ${tag}`}</h1>
+            <h1 className="ml-4">{`# ${tag}`}</h1>
           </article>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 ml-4">
             {tags}
           </div>
           <article className="prose prose2">
-            <figcaption>{`총 ${filteredData.length}개의 포스트`}</figcaption>
+            <figcaption className="ml-4">{`총 ${filteredData.length}개의 포스트`}</figcaption>
           </article>
           <CardsArea data={filteredData} />
         </div>

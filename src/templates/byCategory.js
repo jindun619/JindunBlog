@@ -56,13 +56,13 @@ export default function ByCategoryTemplate({ pageContext, data }) {
       <Navbar data={navbarData} />
       <div className="max-w-2xl pt-16 mx-auto">
         <article className="prose">
-          <h1>
+          <h1 className="ml-4">
             Category: <span className="text-primary">{`${selectedCategory}`}</span>
           </h1>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 ml-4">
             {categories}
           </div>
-          <figcaption>{`총 ${filteredData.length}개의 포스트`}</figcaption>
+          <figcaption className="ml-4">{`총 ${filteredData.length}개의 포스트`}</figcaption>
         </article>
         <CardsArea data={filteredData} />
       </div>
