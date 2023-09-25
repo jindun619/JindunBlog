@@ -10,8 +10,8 @@
 module.exports = {
   siteMetadata: {
     title: `Hoojun.Kim`,
-    description: `This is a blog`,
-    author: `@gatsbyjs`,
+    description: `Hoojun Kim's blog`,
+    author: `Kimhoojun`,
     siteUrl: `https://hoojun.kim/`,
   },
   plugins: [

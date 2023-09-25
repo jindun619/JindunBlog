@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 
+import { Seo } from "../components/Seo"
 import { Navbar } from "../components/Navbar"
 import { CardsArea } from "../components/CardsArea"
 import { TagBtn } from "../components/TagBtn"
@@ -37,6 +38,7 @@ export default function ByTagTemplate({ pageContext, data }) {
   
     return (
       <div className="whole_container h-full">
+        <Seo title={`category=${tag}`} description={`category=${tag}`} url={`/category=${tag}`} />
         <Navbar data={navbarData} />
         <div className="listByTag max-w-2xl pt-16 mx-auto">
           <article className="prose prose1">

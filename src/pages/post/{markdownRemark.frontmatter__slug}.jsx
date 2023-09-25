@@ -2,6 +2,7 @@ import * as React from "react"
 import { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 
+import { Seo } from "../../components/Seo"
 import { Navbar } from "../../components/Navbar";
 import { TagBtn } from "../../components/TagBtn"
 import { Bio } from "../../components/Bio"
@@ -34,10 +35,9 @@ export default function BlogPostTemplate({data}) {
     <div key={node}><a className="link">{node}</a></div>
   ))
 
-  // function TableOfContents = ({})
-
   return (
     <div className="whole_container h-full">
+      <Seo title={frontmatter.title} description={postData.excerpt} url={`/post${frontmatter.slug}`}/>
       <Navbar data={navbarData} />
       <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0 opacity-0 fadeInTransition">
         <article className="prose">
@@ -68,7 +68,7 @@ export default function BlogPostTemplate({data}) {
 
 export const pageQuery = graphql`
 query MyQuery($id: String!) {
-  post: markdownRemark(id: { eq: $id }) {
+  post: markdownRemark(id: {eq: $id}) {
     frontmatter {
       date
       tags
@@ -77,7 +77,7 @@ query MyQuery($id: String!) {
       slug
     }
     html
-    tableOfContents
+    excerpt
   }
   navbar: allMarkdownRemark {
     distinct(field: {frontmatter: {category: SELECT}})

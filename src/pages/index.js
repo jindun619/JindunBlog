@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { Helmet } from "react-helmet";
 
+import { Seo } from "../components/Seo"
 import { Navbar } from "../components/Navbar";
 import { Bio } from "../components/Bio"
 import { CardsArea } from "../components/CardsArea";
@@ -17,10 +17,7 @@ function IndexPage( {data} ) {
 
   return (
     <div>
-      <Helmet>
-        <meta name="google-site-verification" content="_ugXUv4-9ZFkQIhcRLxyyHKcnw1eQKy6qIrko9xhsak" />
-        <meta name="naver-site-verification" content="1ac14aae744cb6ea0e41eb304d628d302ba07e60" />
-      </Helmet>
+      <Seo title="Home" description="Home" url=""/>
       <div className="whole_container h-full">
         <Navbar data={navbarData} />
         <div className="max-w-2xl mx-auto">
