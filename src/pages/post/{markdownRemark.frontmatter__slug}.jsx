@@ -23,7 +23,6 @@ export default function BlogPostTemplate({data}) {
   
   const { frontmatter } = postData
   const { html } = postData
-  const { tableOfContents } = postData
   
   const tags = frontmatter.tags.map((node) => (
     <Link key={node} to={`/tag=${node}`} style={{textDecoration: 'none'}}>
@@ -40,7 +39,6 @@ export default function BlogPostTemplate({data}) {
   return (
     <div className="whole_container h-full">
       <Navbar data={navbarData} />
-      <div className="toc" dangerouslySetInnerHTML={{ __html: tableOfContents }}></div>
       <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0 opacity-0 fadeInTransition">
         <article className="prose">
           <header>
