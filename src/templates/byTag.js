@@ -24,12 +24,12 @@ export default function ByTagTemplate({ pageContext, data }) {
   const tags = tagsData.distinct.map((it, idx) => {
     if(it === tag) {
       return (
-        <TagBtn key={idx} name={`# ${it}`} isActive={true} />
+        <TagBtn key={idx} name={it} isActive={true} />
       )
     } else {
       return (
         <Link key={idx} to={`/tag=${it}`}>
-          <TagBtn name={`# ${it}`} />
+          <TagBtn name={it} />
         </Link>
       )
     }

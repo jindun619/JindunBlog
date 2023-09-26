@@ -6,7 +6,7 @@ function TagBtn({ name, isActive }) {
     active = "btn-active"
   }
   return (
-    <button className={`btn btn-xs btn-outline rounded-full normal-case ${active}`}>{name}</button>
+    <button className={`btn btn-xs btn-outline rounded-full normal-case ${active}`}>{`# ${name}`}</button>
   )
 }
 
