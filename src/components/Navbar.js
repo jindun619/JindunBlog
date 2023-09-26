@@ -20,8 +20,8 @@ function Navbar({ data }) {
   
   const categories = data.distinct.map((it, idx) => (
     <Link key={idx} to={`/category=${it}`}>
-      <li className="my-2">
-        <CategoryBtn name={it} />
+      <li className="my-4">
+        <CategoryBtn name={it} isActive={true} />
       </li>
     </Link>
   ))

@@ -1,13 +1,16 @@
 import * as React from "react";
 
-function CategoryBtn({ name, isActive }) {
-  var active
+function CategoryBtn({ name, isActive, isOutlined }) {
+  var size, active, outline
   if(isActive) {
-    active="btn-active"
+    active="btn-actives"
+  }
+  if(isOutlined) {
+    outline = "btn-outline"
   }
 
   return (
-    <button className={`btn btn-sm btn-outline normal-case hover:bg-base-content hover:text-primary-content ${active}`}>{name}</button>
+    <button className={`btn btn-sm btn-info normal-case ${active} ${outline}`}>{name}</button>
   )
 }
 

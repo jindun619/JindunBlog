@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 
 import { Seo } from "../../components/Seo"
 import { Navbar } from "../../components/Navbar";
+import { CategoryBtn } from "../../components/CategoryBtn";
 import { TagBtn } from "../../components/TagBtn"
 import { Bio } from "../../components/Bio"
 import { Footer } from "../../components/Footer"
@@ -40,6 +41,11 @@ export default function BlogPostTemplate({data}) {
       <Seo title={frontmatter.title} description={postData.excerpt} url={`/post${frontmatter.slug}`}/>
       <Navbar data={navbarData} />
       <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0 opacity-0 fadeInTransition">
+        <div className="mb-2">
+          <Link to={`/category=${frontmatter.category}`}>
+            <CategoryBtn name={frontmatter.category} isActive={true} />
+          </Link>
+        </div>
         <article className="prose">
           <header>
             <h1>{frontmatter.title}</h1>
@@ -71,6 +77,7 @@ query MyQuery($id: String!) {
   post: markdownRemark(id: {eq: $id}) {
     frontmatter {
       date
+      category
       tags
       title
       references

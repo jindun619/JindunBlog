@@ -34,13 +34,13 @@ export default function ByCategoryTemplate({ pageContext, data }) {
     if(category === node) {
       return (
         <Link key={node} to={`/category=${node}`} style={{textDecoration: 'none'}}>
-          <CategoryBtn key={node} name={`${node}(${count})`} isActive={true} />
+          <CategoryBtn name={`${node}(${count})`} />
         </Link>
       )
     } else {
       return (
         <Link key={node} to={`/category=${node}`} style={{textDecoration: 'none'}}>
-          <CategoryBtn key={node} name={`${node}(${count})`} />
+          <CategoryBtn name={`${node}(${count})`} isOutlined={true} />
         </Link>
       )
     }
