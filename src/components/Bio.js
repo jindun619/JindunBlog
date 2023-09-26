@@ -5,7 +5,7 @@ function Bio() {
         <div className="flex ml-4">
           <div className="avatar">
             <div className="w-20 h-20 mt-4s mr-4 rounded-full border-2 border-primary">
-              <img src="https://yapcarforum.kr/bbs/view_image.php?bo_table=free&fn=2022203540_pZAV1Lru_c558836e70450ceee3862890da927523f670ddc5.jpg" alt="bioImg" />
+              <img src="https://pann.nate.com/attach/imageView?source_url=http%3A%2F%2Ffimg5.pann.com%2Fnew%2Fdownload.jsp%3FFileID%3D54519978&cate_cd=30101" alt="bioImg" />
             </div>
           </div>
           <div>
