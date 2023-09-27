@@ -29,7 +29,6 @@ function Navbar({ data }) {
   return (
     <div className="navbar bg-primary sticky top-0 z-10">
       <div className="navbar-start">
-        {/***********/}
         <div className="drawer">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
