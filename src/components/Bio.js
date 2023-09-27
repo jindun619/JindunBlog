@@ -1,6 +1,7 @@
 import * as React from "react"
 
 function Bio() {
+  console.log(" ")
     return (
         <div className="flex ml-4">
           <div className="avatar">
