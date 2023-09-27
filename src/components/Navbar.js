@@ -69,7 +69,7 @@ function Navbar({ data }) {
         </Link>
       </div>
       <div className="navbar-end">
-        {/* search btn zan shi bu yong */}
+        {/* search btn zan shi bu yong  */}
         {/* <button className="btn btn-primary btn-circle">
           <svg
             xmlns="http://www.w3.org/2000/svg"
