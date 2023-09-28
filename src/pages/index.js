@@ -10,6 +10,7 @@ import { Footer } from "../components/Footer"
 import { useTheme } from "../hooks/useTheme"
 
 function IndexPage( {data} ) {
+  console.log("209.97.174.119")
   useTheme("")
 
   const postsData = data.posts

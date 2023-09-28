@@ -79,5 +79,7 @@
     quotes: none;
 }
 
-
+.mdSyntax img {
+    @apply block m-auto
+}
   
