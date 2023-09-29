@@ -1,11 +1,9 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 
-import { Seo } from "../components/Seo"
-import { Navbar } from "../components/Navbar"
+import Layout from "../components/Layout"
 import { CardsArea } from "../components/CardsArea"
 import { CategoryBtn } from "../components/CategoryBtn"
-import { Footer } from "../components/Footer"
 
 import { useTheme } from "../hooks/useTheme"
 
@@ -47,9 +45,7 @@ export default function ByCategoryTemplate({ pageContext, data }) {
   })
 
   return (
-    <div className="whole_container h-full">
-      <Seo title={`category=${category}`} description={`category=${category}`} url={`/category=${category}`} />
-      <Navbar data={navbarData} />
+    <Layout navbarData={navbarData} title={`category=${category}`} description={`category=${category}`} url={`/category=${category}`}>
       <div className="max-w-2xl pt-16 mx-auto">
         <article className="prose">
           <h1 className="ml-4">
@@ -62,9 +58,7 @@ export default function ByCategoryTemplate({ pageContext, data }) {
         </article>
         <CardsArea data={filteredData} />
       </div>
-      {/* FOOTER */}
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 

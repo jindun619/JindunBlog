@@ -1,11 +1,9 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 
-import { Seo } from "../components/Seo"
-import { Navbar } from "../components/Navbar"
+import Layout from "../components/Layout"
 import { CardsArea } from "../components/CardsArea"
 import { TagBtn } from "../components/TagBtn"
-import { Footer } from "../components/Footer"
 
 import { useTheme } from "../hooks/useTheme"
 
@@ -37,9 +35,7 @@ export default function ByTagTemplate({ pageContext, data }) {
   )
   
     return (
-      <div className="whole_container h-full">
-        <Seo title={`category=${tag}`} description={`category=${tag}`} url={`/category=${tag}`} />
-        <Navbar data={navbarData} />
+      <Layout navbarData={navbarData} title={`category=${tag}`} description={`category=${tag}`} url={`/category=${tag}`}>
         <div className="listByTag max-w-2xl pt-16 mx-auto">
           <article className="prose prose1">
             <h1 className="ml-4">{`# ${tag}`}</h1>
@@ -52,9 +48,7 @@ export default function ByTagTemplate({ pageContext, data }) {
           </article>
           <CardsArea data={filteredData} />
         </div>
-        {/* FOOTER */}
-        <Footer />
-      </div>
+      </Layout>
     )
 }
 

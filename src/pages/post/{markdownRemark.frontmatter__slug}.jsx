@@ -2,12 +2,10 @@ import * as React from "react"
 import { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 
-import { Seo } from "../../components/Seo"
-import { Navbar } from "../../components/Navbar";
+import Layout from "../../components/Layout"
 import { CategoryBtn } from "../../components/CategoryBtn";
 import { TagBtn } from "../../components/TagBtn"
 import { Bio } from "../../components/Bio"
-import { Footer } from "../../components/Footer"
 import { Comment } from "../../components/Comment"
 
 import { useTheme } from "../../hooks/useTheme"
@@ -37,10 +35,8 @@ export default function BlogPostTemplate({data}) {
   ))
 
   return (
-    <div className="whole_container h-full">
-      <Seo title={frontmatter.title} description={postData.excerpt} url={`/post${frontmatter.slug}`}/>
-      <Navbar data={navbarData} />
-      <div className="max-w-2xl pt-16 mx-auto px-4 md:px-0 opacity-0 fadeInTransition">
+    <Layout navbarData={navbarData} title={frontmatter.title} description={postData.excerpt} url={`/post${frontmatter.slug}`}>
+      <div className="max-w-2xl mx-auto pt-16 px-4 md:px-0 opacity-0 fadeInTransition">
         <div className="mb-2">
           <Link to={`/category=${frontmatter.category}`}>
             <CategoryBtn name={frontmatter.category} isActive={true} />
@@ -65,10 +61,8 @@ export default function BlogPostTemplate({data}) {
           <Bio />
         </div>
         <Comment repo="jindun619/blog-comments" title={frontmatter.title} />
-        {/* FOOTER */}
-        <Footer />
       </div>
-    </div>
+    </Layout>
   )
 }
 
