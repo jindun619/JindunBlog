@@ -75,7 +75,7 @@
 }
 
 .mdSyntax blockquote {
-    @apply border-l-primary;
+    @apply border-l-primary bg-base-100;
     /* quotes: none; */
 }
 
