@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../../components/Layout"
+import TableOfContents from "../../components/TableOfContents"
 import { CategoryBtn } from "../../components/CategoryBtn";
 import { TagBtn } from "../../components/TagBtn"
 import { Bio } from "../../components/Bio"
@@ -36,31 +37,34 @@ export default function BlogPostTemplate({data}) {
 
   return (
     <Layout navbarData={navbarData} title={frontmatter.title} description={postData.excerpt} url={`/post${frontmatter.slug}`}>
-      <div className="max-w-2xl mx-auto pt-16 px-4 md:px-0 opacity-0 fadeInTransition">
-        <div className="mb-2">
-          <Link to={`/category=${frontmatter.category}`}>
-            <CategoryBtn name={frontmatter.category} isActive={true} />
-          </Link>
-        </div>
-        <article className="prose">
-          <header>
-            <h1>{frontmatter.title}</h1>
-            <p>{frontmatter.date}</p>
-            <div>{tags}</div>
-          </header>
-          <div
-            dangerouslySetInnerHTML={{ __html: html }}
-            className="mdSyntax pb-8 border-b-2"
-          />
-          <div className={frontmatter.references.length !== 0 ? "border-b-2 pb-8" : ""}>
-            <h2>{frontmatter.references.length !== 0 ? "참고" : ""}</h2>
-            {references}
+      <div className="flex flex-wrap">
+        <div className="max-w-2xl mx-auto pt-16 px-4 md:px-0 opacity-0 fadeInTransition">
+          <div className="mb-2">
+            <Link to={`/category=${frontmatter.category}`}>
+              <CategoryBtn name={frontmatter.category} isActive={true} />
+            </Link>
           </div>
-        </article>
-        <div className="pt-8 pb-16">
-          <Bio />
+          <article className="prose">
+            <header>
+              <h1>{frontmatter.title}</h1>
+              <p>{frontmatter.date}</p>
+              <div>{tags}</div>
+            </header>
+            <div
+              dangerouslySetInnerHTML={{ __html: html }}
+              className="mdSyntax pb-8 border-b-2"
+            />
+            <div className={frontmatter.references.length !== 0 ? "border-b-2 pb-8" : ""}>
+              <h2>{frontmatter.references.length !== 0 ? "참고" : ""}</h2>
+              {references}
+            </div>
+          </article>
+          <div className="pt-8 pb-16">
+            <Bio />
+          </div>
+          <Comment repo="jindun619/blog-comments" title={frontmatter.title} />
         </div>
-        <Comment repo="jindun619/blog-comments" title={frontmatter.title} />
+        {/* <TableOfContents content={postData.tableOfContents} /> 추후 개발 예정 */}
       </div>
     </Layout>
   )
@@ -79,6 +83,7 @@ query MyQuery($id: String!) {
     }
     html
     excerpt
+    tableOfContents
   }
   navbar: allMarkdownRemark {
     distinct(field: {frontmatter: {category: SELECT}})

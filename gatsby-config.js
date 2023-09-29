@@ -25,7 +25,8 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          'gatsby-remark-prismjs',
+          `gatsby-remark-autolink-headers`, //must be ahead of prismjs plugin
+          `gatsby-remark-prismjs`,
           `gatsby-remark-smartypants`,
         ]
       }
