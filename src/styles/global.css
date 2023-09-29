@@ -76,7 +76,15 @@
 
 .mdSyntax blockquote {
     @apply border-l-primary;
-    quotes: none;
+    /* quotes: none; */
+}
+
+.mdSyntax blockquote:before {
+    content: ""
+}
+
+.mdSyntax blockquote:after {
+    content: ""
 }
 
 .mdSyntax img {
