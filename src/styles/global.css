@@ -75,16 +75,12 @@
 }
 
 .mdSyntax blockquote {
-    @apply border-l-primary bg-base-100;
-    /* quotes: none; */
+    @apply border-l-primary bg-base-200 pl-8 pt-4 pb-4 pr-4 not-italic;
+    quotes: none;
 }
 
-.mdSyntax blockquote:before {
-    content: ""
-}
-
-.mdSyntax blockquote:after {
-    content: ""
+.mdSyntax blockquote p {
+    @apply m-0
 }
 
 .mdSyntax img {
