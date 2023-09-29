@@ -24,8 +24,9 @@ function Seo ({ title, description, url }) {
 			<meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:url" content={`${siteMetadata.siteUrl}${url}`} />
-      {/* <meta property="og:image" content={image} /> */}
+      {/* <meta property="og:image" content={""} /> */}
       <meta property="og:description" content={description} />
+      <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
       {/* Search Engine Verifications */}
       <meta name="google-site-verification" content="_ugXUv4-9ZFkQIhcRLxyyHKcnw1eQKy6qIrko9xhsak" />

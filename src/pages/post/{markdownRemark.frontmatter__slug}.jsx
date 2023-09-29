@@ -26,7 +26,8 @@ export default function BlogPostTemplate({data}) {
   const { frontmatter } = postData
   const { html } = postData
 
-  let featuredImg = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
+  const featuredImg = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
+  const relativePath = frontmatter.featuredImage.relativePath
   
   const tags = frontmatter.tags.map((node) => (
     <Link key={node} to={`/tag=${node}`} style={{textDecoration: 'none'}}>
