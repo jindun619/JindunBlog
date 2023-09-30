@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 import { CardsArea } from "../components/CardsArea"
 import { TagBtn } from "../components/TagBtn"
 
@@ -35,7 +36,8 @@ export default function ByTagTemplate({ pageContext, data }) {
   )
   
     return (
-      <Layout navbarData={navbarData} title={`category=${tag}`} description={`category=${tag}`} url={`/category=${tag}`}>
+      <Layout navbarData={navbarData}>
+        <Seo title={`category=${tag}`} description={`category=${tag}`} url={`/category=${tag}`}/>
         <div className="listByTag max-w-2xl pt-16 mx-auto">
           <article className="prose prose1">
             <h1 className="ml-4">{`# ${tag}`}</h1>

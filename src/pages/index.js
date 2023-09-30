@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 import { Bio } from "../components/Bio"
 import { CardsArea } from "../components/CardsArea";
 
@@ -15,7 +16,8 @@ function IndexPage( {data} ) {
   const navbarData = data.navbar
 
   return (
-    <Layout navbarData={navbarData} title="Home" description="Home" url="">
+    <Layout navbarData={navbarData}>
+      <Seo title="Home" description="Home" url=""/>
       <div className="max-w-2xl mx-auto">
         {/* BIO */}
         <div className="mt-16">

@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 import { CardsArea } from "../components/CardsArea"
 import { CategoryBtn } from "../components/CategoryBtn"
 
@@ -45,7 +46,8 @@ export default function ByCategoryTemplate({ pageContext, data }) {
   })
 
   return (
-    <Layout navbarData={navbarData} title={`category=${category}`} description={`category=${category}`} url={`/category=${category}`}>
+    <Layout navbarData={navbarData}>
+      <Seo title={`category=${category}`} description={`category=${category}`} url={`/category=${category}`}/>
       <div className="max-w-2xl pt-16 mx-auto">
         <article className="prose">
           <h1 className="ml-4">
