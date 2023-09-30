@@ -1,6 +1,7 @@
 import * as React from "react"
 import { useEffect } from "react"
 import { graphql, Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
@@ -25,6 +26,8 @@ export default function BlogPostTemplate({data}) {
   
   const { frontmatter } = postData
   const { html } = postData
+
+  const featuredImg = getImage(postData.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
 
   const tags = frontmatter.tags.map((node) => (
     <Link key={node} to={`/tag=${node}`} style={{textDecoration: 'none'}}>
@@ -51,6 +54,7 @@ export default function BlogPostTemplate({data}) {
             <p>{frontmatter.date}</p>
             <div>{tags}</div>
           </header>
+          <GatsbyImage image={featuredImg} className="rounded-[20px] mb-10" />
           <div
             dangerouslySetInnerHTML={{ __html: html }}
             className="mdSyntax pb-8 border-b-2"
@@ -80,6 +84,11 @@ query MyQuery($id: String!) {
       title
       references
       slug
+      featuredImage {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
     }
     html
     excerpt
