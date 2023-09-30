@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useEffect } from "react"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+// import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/Layout"
 import { Seo } from "../../components/Seo"
@@ -27,7 +27,7 @@ export default function BlogPostTemplate({data}) {
   const { frontmatter } = postData
   const { html } = postData
 
-  const featuredImg = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
+  // const featuredImg = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
   
   const tags = frontmatter.tags.map((node) => (
     <Link key={node} to={`/tag=${node}`} style={{textDecoration: 'none'}}>
@@ -41,7 +41,7 @@ export default function BlogPostTemplate({data}) {
 
   return (
     <Layout navbarData={navbarData}>
-      {/* <Seo title={frontmatter.title} description={postData.excerpt} url={`/post${frontmatter.slug}`} /> */}
+      <Seo title={frontmatter.title} description={postData.excerpt} url={`/post${frontmatter.slug}`} />
       <div className="max-w-2xl mx-auto pt-16 px-4 md:px-0 opacity-0 fadeInTransition">
         <div className="mb-2">
           <Link to={`/category=${frontmatter.category}`}>
@@ -54,7 +54,7 @@ export default function BlogPostTemplate({data}) {
             <p>{frontmatter.date}</p>
             <div>{tags}</div>
           </header>
-          <GatsbyImage image={featuredImg} className="rounded-[20px] mb-10" />
+          {/* <GatsbyImage image={featuredImg} className="rounded-[20px] mb-10" /> */}
           <div
             dangerouslySetInnerHTML={{ __html: html }}
             className="mdSyntax pb-8 border-b-2"
@@ -84,11 +84,6 @@ query MyQuery($id: String!) {
       title
       references
       slug
-      featuredImage {
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
     }
     html
     excerpt
