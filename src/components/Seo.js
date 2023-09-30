@@ -3,29 +3,29 @@ import Helmet from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby"
 
 function Seo ({ title, description, url }) {
-    const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          siteUrl
-          title
-          description
-        }
-      }
-    }
-  `)
+  //   const data = useStaticQuery(graphql`
+  //   {
+  //     site {
+  //       siteMetadata {
+  //         siteUrl
+  //         title
+  //         description
+  //       }
+  //     }
+  //   }
+  // `)
   
-  const { site } = data
-  const { siteMetadata } = site
+  // const { site } = data
+  // const { siteMetadata } = site
 
 	return (
 		<Helmet>
-			<title>{`${title} | ${siteMetadata.title}`}</title>
+			{/* <title>{`${title} | ${siteMetadata.title}`}</title> */}
 			<meta name="description" content={description} />
       <meta property="og:title" content={title} />
-      <meta property="og:url" content={`${siteMetadata.siteUrl}${url}`} />
+      {/* <meta property="og:url" content={`${siteMetadata.siteUrl}${url}`} /> */}
       {/* <meta property="og:image" content={""} /> */}
-      <meta property="og:description" content={description} />
+      {/* <meta property="og:description" content={description} /> */}
       <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
       {/* Search Engine Verifications */}
