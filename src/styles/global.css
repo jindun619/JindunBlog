@@ -75,7 +75,7 @@
 }
 
 .mdSyntax blockquote {
-    @apply border-l-primary bg-base-200 pl-8 pt-4 pb-4 pr-4 not-italic;
+    @apply border-l-primary bg-base-300 pl-8 pt-4 pb-4 pr-4 not-italic;
     quotes: none;
 }
 
@@ -85,5 +85,9 @@
 
 .mdSyntax img {
     @apply block m-auto
+}
+
+.mdSyntax .language-text {
+    @apply bg-primary-content text-base-content
 }
   
