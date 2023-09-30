@@ -27,7 +27,7 @@ export default function BlogPostTemplate({data}) {
   const { frontmatter } = postData
   const { html } = postData
 
-  // const featuredImg = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
+  const featuredImg = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
   
   const tags = frontmatter.tags.map((node) => (
     <Link key={node} to={`/tag=${node}`} style={{textDecoration: 'none'}}>
@@ -54,7 +54,7 @@ export default function BlogPostTemplate({data}) {
             <p>{frontmatter.date}</p>
             <div>{tags}</div>
           </header>
-          {/* <GatsbyImage image={featuredImg} className="rounded-[20px] mb-10" /> */}
+          <GatsbyImage image={featuredImg} className="rounded-[20px] mb-10" />
           <div
             dangerouslySetInnerHTML={{ __html: html }}
             className="mdSyntax pb-8 border-b-2"
@@ -84,7 +84,11 @@ query MyQuery($id: String!) {
       title
       references
       slug
-      featuredImage
+      featuredImage {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
     }
     html
     excerpt
