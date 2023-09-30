@@ -4,7 +4,7 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/Layout"
-import Seo from "../../components/Seo"
+import { Seo } from "../../components/Seo"
 import TableOfContents from "../../components/TableOfContents"
 import { CategoryBtn } from "../../components/CategoryBtn";
 import { TagBtn } from "../../components/TagBtn"
