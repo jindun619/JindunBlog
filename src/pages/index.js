@@ -18,7 +18,7 @@ function IndexPage( {data} ) {
 
   return (
     <Layout navbarData={navbarData}>
-      <Seo title="Home" description="Home" url=""/>
+      <Seo title="Home" description="Home" url="" />
       <div className="max-w-2xl mx-auto">
         {/* BIO */}
         <div className="mt-16">

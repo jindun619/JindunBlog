@@ -47,7 +47,7 @@ export default function ByCategoryTemplate({ pageContext, data }) {
 
   return (
     <Layout navbarData={navbarData}>
-      <Seo title={`category=${category}`} description={`category=${category}`} url={`/category=${category}`}/>
+      <Seo title={`category=${category}`} description={`category=${category}`} url={`/category=${category}`} />
       <div className="max-w-2xl pt-16 mx-auto">
         <article className="prose">
           <h1 className="ml-4">
