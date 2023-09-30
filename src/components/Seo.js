@@ -3,20 +3,20 @@ import Helmet from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby"
 
 function Seo ({ title, description, url }) {
-  //   const data = useStaticQuery(graphql`
-  //   {
-  //     site {
-  //       siteMetadata {
-  //         siteUrl
-  //         title
-  //         description
-  //       }
-  //     }
-  //   }
-  // `)
+    const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          siteUrl
+          title
+          description
+        }
+      }
+    }
+  `)
   
-  // const { site } = data
-  // const { siteMetadata } = site //
+  const { site } = data
+  const { siteMetadata } = site //
 
 	return (
 		<Helmet>

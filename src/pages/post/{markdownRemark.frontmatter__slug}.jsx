@@ -41,7 +41,7 @@ export default function BlogPostTemplate({data}) {
 
   return (
     <Layout navbarData={navbarData}>
-      <Seo title={frontmatter.title} description={postData.excerpt} url={`/post${frontmatter.slug}`} />
+      {/* <Seo title={frontmatter.title} description={postData.excerpt} url={`/post${frontmatter.slug}`} /> */}
       <div className="max-w-2xl mx-auto pt-16 px-4 md:px-0 opacity-0 fadeInTransition">
         <div className="mb-2">
           <Link to={`/category=${frontmatter.category}`}>
