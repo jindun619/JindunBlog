@@ -25,6 +25,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth:800,
+            }
+          },
           `gatsby-remark-autolink-headers`, //must be ahead of prismjs plugin
           `gatsby-remark-prismjs`,
           `gatsby-remark-smartypants`,
@@ -36,6 +42,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/static/postImages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/posts/images`,
       },
     },
     {
