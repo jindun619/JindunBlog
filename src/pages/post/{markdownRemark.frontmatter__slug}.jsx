@@ -84,11 +84,7 @@ query MyQuery($id: String!) {
       title
       references
       slug
-      featuredImage {
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
+      featuredImage
     }
     html
     excerpt
@@ -100,3 +96,8 @@ query MyQuery($id: String!) {
 }
 `
 
+// featuredImage {
+//   childImageSharp {
+//     gatsbyImageData
+//   }
+// }
