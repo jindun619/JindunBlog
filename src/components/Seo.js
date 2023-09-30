@@ -16,7 +16,7 @@ function Seo ({ title, description, url }) {
   // `)
   
   // const { site } = data
-  // const { siteMetadata } = site
+  // const { siteMetadata } = site //
 
 	return (
 		<Helmet>
