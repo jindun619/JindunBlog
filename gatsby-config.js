@@ -38,20 +38,6 @@ module.exports = {
         path: `${__dirname}/static/postImages`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images`,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images/featuredImages`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
