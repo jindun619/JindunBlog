@@ -54,7 +54,7 @@ export default function BlogPostTemplate({data}) {
             <p>{frontmatter.date}</p>
             <div>{tags}</div>
           </header>
-          <GatsbyImage image={featuredImg} className="rounded-[20px] mb-10" />
+          <GatsbyImage image={featuredImg} className="rounded-[20px] h-80 mb-10" />
           <div
             dangerouslySetInnerHTML={{ __html: html }}
             className="mdSyntax pb-8 border-b-2"
