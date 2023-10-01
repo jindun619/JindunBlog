@@ -1,7 +1,7 @@
 import * as React from "react";
 
 function CategoryBtn({ name, isActive, isOutlined }) {
-  var size, active, outline
+  var active, outline
   if(isActive) {
     active="btn-actives"
   }
@@ -10,7 +10,7 @@ function CategoryBtn({ name, isActive, isOutlined }) {
   }
 
   return (
-    <button className={`btn btn-sm btn-info normal-case ${active} ${outline}`}>{name}</button>
+    <button className={`btn btn-sm btn-info hover:bg-info normal-case ${active} ${outline}`}>{name}</button>
   )
 }
 
