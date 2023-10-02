@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
-import TableOfContents from "../../components/TableOfContents"
+// import TableOfContents from "../../components/TableOfContents"
 import { CategoryBtn } from "../../components/CategoryBtn";
 import { TagBtn } from "../../components/TagBtn"
 import { Bio } from "../../components/Bio"
@@ -36,7 +36,7 @@ export default function BlogPostTemplate({data}) {
   ))
 
   const references = frontmatter.references.map((node) => (
-    <div key={node}><a className="link">{node}</a></div>
+    <div key={node}><Link to={node} className="text-primary hover:decoration-double">{node}</Link></div>
   ))
 
   return (

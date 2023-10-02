@@ -2,7 +2,6 @@ import * as React from "react";
 import { TagBtn } from "../components/TagBtn";
 import { Link } from "gatsby";
 
-import { CategoryBtn } from "./CategoryBtn";
 function Card(props) {
   const tags = props.tags.map((tagName) => (
     <Link key={tagName} to={`/tag=${tagName}`}>
