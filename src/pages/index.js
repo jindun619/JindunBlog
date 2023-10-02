@@ -10,6 +10,7 @@ import { useTheme } from "../hooks/useTheme"
 
 function IndexPage( {data} ) {
   console.log("209.97.174.119")
+  console.log("it doesn't work?")
   useTheme("")
 
   const postsData = data.posts
