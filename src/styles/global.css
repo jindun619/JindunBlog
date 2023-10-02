@@ -71,8 +71,7 @@
 }
 
 .mdSyntax p {
-    @apply text-lg;
-    line-height: 2.25rem
+    @apply text-[1.125rem] leading-10
 }
 
 .mdSyntax blockquote {
