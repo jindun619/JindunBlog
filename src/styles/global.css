@@ -71,7 +71,7 @@
 }
 
 .mdSyntax p {
-    @apply text-lg
+    @apply text-lg leading-10
 }
 
 .mdSyntax blockquote {
@@ -88,6 +88,7 @@
 }
 
 .mdSyntax .language-text {
-    @apply bg-primary-content text-base-content
+    @apply bg-primary-content text-base-content;
+    text-shadow: none;
 }
   
