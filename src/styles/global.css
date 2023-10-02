@@ -71,7 +71,7 @@
 }
 
 .mdSyntax p {
-    @apply text-lg leading-10
+    @apply text-lg leading-9
 }
 
 .mdSyntax blockquote {
