@@ -10,7 +10,7 @@ function CategoryBtn({ name, isActive, isOutlined }) {
   }
 
   return (
-    <button className={`btn btn-sm btn-info hover:bg-info normal-case ${active} ${outline}`}>{name}</button>
+    <button className={`btn btn-sm btn-primary hover:bg-primary normal-case ${active} ${outline}`}>{name}</button>
   )
 }
 
