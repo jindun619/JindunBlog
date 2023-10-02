@@ -39,7 +39,7 @@
 }
 
 .prose header h1 {
-    @apply text-5xl mb-4 border-none
+    @apply text-5xl mb-4 border-none text-primary
 }
 
 .prose header p {
