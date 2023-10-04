@@ -1,7 +1,7 @@
 # :man_technologist: Hoojun.Kim
 코린이 김호준의 블로그입니다.
 [블로그 방문](https://hoojun.kim/)
-d
+ds
 ## :art: 사용 스택
 - [Gatsby](https://www.gatsbyjs.com/)
 - [React](https://react.dev/)
