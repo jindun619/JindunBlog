@@ -9,9 +9,7 @@
 
 ## 📚 사용 스택
 
-- [Gatsby](https://www.gatsbyjs.com/)
-
-- [React](https://react.dev/)
+![React](https://img.shields.io/badge/Gatsby-663399?style=for-the-badge&logo=Gatsby&logoColor=white)![React](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 
 ## :heavy_check_mark: 작업한 기능들
 
