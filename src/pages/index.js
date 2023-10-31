@@ -1,14 +1,14 @@
-import * as React from "react";
-import { graphql } from "gatsby";
+import * as React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import { Bio } from "../components/Bio"
-import { CardsArea } from "../components/CardsArea";
+import { CardsArea } from "../components/CardsArea"
 
 import { useTheme } from "../hooks/useTheme"
 
-function IndexPage( {data} ) {
+function IndexPage({ data }) {
   console.log("209.97.174.119")
   useTheme("")
 
@@ -29,14 +29,14 @@ function IndexPage( {data} ) {
         <CardsArea data={postsData.edges} />
       </div>
     </Layout>
-  );
+  )
 }
 
-export default IndexPage;
+export default IndexPage
 
 export const pageQuery = graphql`
   query MyQuery {
-    posts: allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    posts: allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           frontmatter {
@@ -44,13 +44,14 @@ export const pageQuery = graphql`
             title
             slug
             tags
+            category
           }
           excerpt(truncate: true)
         }
       }
     }
     navbar: allMarkdownRemark {
-      distinct(field: {frontmatter: {category: SELECT}})
+      distinct(field: { frontmatter: { category: SELECT } })
     }
   }
 `
