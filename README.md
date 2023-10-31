@@ -1,15 +1,14 @@
-
 # :man_technologist: Hoojun.Kim
 
 코린이 김호준의 블로그입니다.
 
 [블로그 방문](https://hoojun.kim/)
 a
-  
 
 ## 📚 사용 스택
 
-![React](https://img.shields.io/badge/Gatsby-663399?style=for-the-badge&logo=Gatsby&logoColor=white)![React](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![React](https://img.shields.io/badge/Gatsby-663399?style=for-the-badge&logo=Gatsby&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
 ## :heavy_check_mark: 작업한 기능들
 
