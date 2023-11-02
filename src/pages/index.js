@@ -11,7 +11,7 @@ import { useTheme } from "../hooks/useTheme"
 function IndexPage({ data }) {
   console.log("209.97.174.119")
   useTheme("")
-
+  // code server not working
   const postsData = data.posts
   const navbarData = data.navbar
 
