@@ -30,3 +30,5 @@
 - [ ] Table of Contents 기능
 
 - [ ] 검색 기능
+
+- [ ] About Me 페이지 만들기
