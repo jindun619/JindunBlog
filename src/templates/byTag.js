@@ -35,8 +35,8 @@ export default function ByTagTemplate({ pageContext, data }) {
   return (
     <Layout navbarData={navbarData}>
       <Seo
-        title={`category=${tag}`}
-        description={`category=${tag}`}
+        title={tag}
+        description={tag}
         url={`/category=${tag}`}
       />
       <div className="listByTag max-w-2xl pt-16 mx-auto">
