@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 function Bio() {
   return (
@@ -10,7 +9,7 @@ function Bio() {
           {/* <StaticImage src="https://mblogthumb-phinf.pstatic.net/MjAyMTA4MTFfMzkg/MDAxNjI4NjY1NjgwNTUw.K2a44KxCgskoaKSw8cH5ySnsEuadVA8wphcrBOrDwBQg.R4GfkzCRdTa1jdicp9p4Ph8A4THJ8tX1mZO-uTqzgygg.JPEG.bbekimha/%EB%A3%A8%ED%94%BC.jpg?type=w800" alt="bioImg" /> */}
           <img
             className="rounded-full"
-            src="https://mblogthumb-phinf.pstatic.net/MjAyMTA4MTFfMzkg/MDAxNjI4NjY1NjgwNTUw.K2a44KxCgskoaKSw8cH5ySnsEuadVA8wphcrBOrDwBQg.R4GfkzCRdTa1jdicp9p4Ph8A4THJ8tX1mZO-uTqzgygg.JPEG.bbekimha/%EB%A3%A8%ED%94%BC.jpg?type=w800"
+            src="/asset/bio-image.PNG"
             alt="bioImg"
           />
         </div>
