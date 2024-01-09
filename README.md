@@ -32,3 +32,5 @@
 - [ ] 검색 기능
 
 - [ ] About Me 페이지 만들기
+
+- [ ] Next.js로 Migration
